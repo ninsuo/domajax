@@ -1,0 +1,48 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-value.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-value</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Process the ajax request only if selector's inputs have been updated.</p>
+            <br/>
+            <p>
+                Sometimes, we need to process an ajax call as soon as users are typing, such as on a
+                search form, or when a field is auto-completed / auto-saved. But, there are some
+                keys that do not change field's contents, such as arrows or ctrl / alt keys. This option
+                let you avoid sending an ajax call twice if a value has not been updated.
+            </p>
+            <div class="alert alert-warning">
+                This is recommanded to include the <a target="_blank" href="https://github.com/douglascrockford/JSON-js">JSON2.js library</a> if you are using <em>data-value</em> for better compatibility.
+            </div>
+            <div class="alert alert-info">
+                If <em>data-value</em> is set but empty, the domajax element will be used as selector.
+            </div>
+            <div class="alert alert-info">
+                By default, <em>data-value</em> is set to the domajax keyup event.
+            </div>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-value="(selector that should change)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-value="#input"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

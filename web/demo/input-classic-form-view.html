@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-input - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    This example is a simple ajax form posting. Note that the &lt;form&gt; tag can be replaced by a
+    &lt;div&gt; or another container, it does not matter.
+</p>
+<br/>
+
+<!-- demo starts here -->
+
+<form id="input" action="#" method="post">
+
+    <label>Gender :</label>
+    <label class="radio">
+        <input name="gender" type="radio" value="Male" checked/> Male
+    </label>
+    <label class="radio">
+        <input name="gender" type="radio" value="Female"/> Female
+    </label>
+
+    <label>First Name :</label>
+    <input name="first-name" type="text" value="Mickael"/>
+
+    <label>Last Name :</label>
+    <input name="last-name" type="text" value="Steller"/>
+
+    <label>Language :</label>
+    <select name="language">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="cn">Chinese</option>
+    </select>
+
+    <label>Message :</label>
+    <textarea name="message">Hello, world!</textarea>
+
+    <label class="checkbox">
+        <input name="steak" type="checkbox"/> I like steaks
+    </label>
+
+    <br/>
+
+    <input
+            type="button"
+            value="Submit"
+            class="btn domajax click"
+            data-endpoint="input-classic-form-handler.php"
+            data-input="#input"
+            data-output="#output"
+            />
+
+</form>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

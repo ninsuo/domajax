@@ -1,0 +1,42 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-unlock.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-unlock</h2>
+    <div>
+        <div class="span12">
+           <p class="lead">Enable form fields when ajax calls are given back.</p>
+           <h4>Available events: data-unlock-before, data-unlock-complete (default), data-unlock-success, data-unlock-failure, data-unlock-empty, data-unlock-not-empty</h4>
+            <p>
+               <em>data-unlock</em> will remove disabled attribute on form fields. This option is automatically set when using <em>data-lock</em>, so fields
+               are locked before the ajax call and unlocked after, avoiding multiple posts. Sometimes, it is required to control manually lock and unlock states according
+               to the call's success or the response's content, so you are able to use this option independantly.
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-unlock="container-to-unlock"</li>
+                            <li>data-unlock="(empty)"</li>
+                            <li>data-unlock-(event)="container-to-unlock"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-unlock="#clear-output"</li>
+                            <li>data-unlock=""</li>
+                            <li>data-unlock-if-not-empty="#clear-output"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

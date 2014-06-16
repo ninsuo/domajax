@@ -1,0 +1,37 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-endpoint-container.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-endpoint-container</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Sets ajax endpoint from contents of a selector.</p>
+            <p><div class="alert alert-error"><b>Required</b> if you are not using <em>data-endpoint</em>.</div></p>
+            <p>The specified selector (input, div, etc) should contain a relative, absolute or full URL that points to the remote file that will be requested.</p>
+            <p>In special cases, this is sometimes useful to externalize endpoint, to use the same form with a different endpoint for example.</p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usages</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-endpoint-container="#container_id"</li>
+                            <li>data-endpoint-container=".some_class"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Examples</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-endpoint-container="#foo"</li>
+                            <li>data-endpoint-container=".bar"</li>
+                        </ul>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

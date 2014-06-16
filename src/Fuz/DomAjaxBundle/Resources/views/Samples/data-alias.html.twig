@@ -1,0 +1,28 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-alias.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-alias', [
+        {
+            'title': 'Form auto-save',
+            'content': macros.demo_tabs('alias-autosave', true),
+        },
+        {
+            'title': 'Oveloading options',
+            'content': macros.demo_tabs('alias-overload', true),
+        },
+        {
+            'title': 'Multiple inheritance',
+            'content': macros.demo_tabs('alias-multiple', true),
+        },
+        {
+            'title': 'Alias of aliases',
+            'content': macros.demo_tabs('alias-alias', true),
+        },
+        {
+            'title': 'No, alias loops are not possible !',
+            'content': macros.demo_tabs('alias-infinite', true),
+        },
+    ])
+}}

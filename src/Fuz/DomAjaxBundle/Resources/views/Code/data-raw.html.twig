@@ -1,0 +1,45 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-raw.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-raw, data-raw-type</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Set the request body manually.</p>
+            <br/>
+            <p>
+                If you need to do a REST call using ajax, you will need this option to set the body manually. You'll also need to specify the body's content type
+                using <em>data-raw-type</em> (xml, json, script or html), and eventually, don't forget to look at <em>data-method</em> to set the
+                HTTP method to use (GET, PUT, DELETE and so on).
+            </p>
+            <p>
+                <div class="alert alert-info">
+                    <em>data-raw</em> overwrites <em>data-input</em> and <em>data-input-attr</em> options.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-raw="(selector or raw data)"</li>
+                            <li>data-raw-type="(raw body's content type)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-raw="{'Hello,':'world!'}"</li>
+                            <li>data-raw-type="json"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

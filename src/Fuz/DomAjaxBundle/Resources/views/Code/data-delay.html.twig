@@ -1,0 +1,45 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-delay.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-delay</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Sets a type watcher delay (milisecs) before processing an ajax call.</p>
+            <br/>
+            <p>
+                When a form is auto-posted, this is common to set a grace delay when user is typing
+                before sending the ajax call. <em>data-delay</em> let you set this grace period,
+                better known as type watcher. You can use this option whatever if you are using events
+                or not; it will be applied each time <strong>.domAjax</strong> is called.
+            </p>
+            <div class="alert alert-warning">
+                <em>data-delay</em> uses <em>data-delay-watcher</em> attribute internally.
+            </div>
+            <div class="alert alert-info">
+                By default, <em>data-delay</em> is set to 800 on KeyUp events.
+            </div>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-delay="(time in miliseconds)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-delaye="800"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

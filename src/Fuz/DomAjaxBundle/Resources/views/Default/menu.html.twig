@@ -1,0 +1,44 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a href="{{ path('fuz_dom_ajax_homepage') }}" class="brand">domajax.com</a>
+            <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="{{ path('fuz_dom_ajax_homepage') }}#home-top">Home</a>
+                    </li>
+                    <li class="">
+                        <a href="{{ path('fuz_dom_ajax_homepage') }}#introduction-top">Introduction</a>
+                    </li>
+                    <li class="">
+                        <a href="{{ path('fuz_dom_ajax_homepage') }}#get-started-top">Get started</a>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Options <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            {% for name, option in options %}
+                            <li><a href="{{ path('fuz_dom_ajax_documentation', {'option': name}) }}">{{ name }} - {{ option.description }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Event Listeners <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                {% for name, event in events %}
+                                <li><a href="{{ path('fuz_dom_ajax_documentation', {'option': name}) }}">{{ event.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="{{ path('fuz_dom_ajax_homepage') }}#about-top">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,48 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-cache.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-cache, data-cache-name</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Prevents browsers from getting cached response instead of calling your endpoint.</p>
+            <p>
+                If <em>data-cache</em> is set to true, endpoint defined in <em>data-endpoint</em> will be appended
+                with a query string containing a unique string (a timestamp and a random number). With that unique URL, a
+                browser will not consider the endpoint as already-downloaded and will not use cached contents.
+                <br/>
+                The <em>data-cache-name</em> option let you change the name of the variable used to store that
+                unique string. If you set it to bob, then the query string will look like ?bob=121351987234132. Note that
+                this name should be composed of alphabetic characters and underscore.
+            </p>
+            <p>
+                <div class="alert alert-info">
+                    By default, <em>data-cache</em> is set to <b>false</b>, and <em>data-cache-name</em> is set to <b>ajax</b>.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-cache="(true or false)"</li>
+                            <li>data-cache-name="(a name composed of a-zA-Z_)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-cache="true"</li>
+                            <li>data-cache-name="ajax"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

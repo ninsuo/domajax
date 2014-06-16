@@ -1,0 +1,36 @@
+{% extends 'FuzDomAjaxBundle:Default:base.html.twig' %}
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{% block title %}
+{{ option }} - Documentation - domajax - Use Ajax powerfulness without JavaScript
+{% endblock %}
+
+{% block contents %}
+
+{% include 'FuzDomAjaxBundle:Code:' ~ option ~ '.html.twig' %}
+
+<h3>Live examples</h3>
+
+{% include 'FuzDomAjaxBundle:Samples:' ~ option ~ '.html.twig' %}
+
+{% if details['see-also'] | default({}) | length > 0 %}
+
+<hr>
+
+<div>
+    <span class="lead">
+        See also
+    </span>
+    &nbsp;
+    {% for name in details['see-also'] %}
+    &nbsp;<a href="{{ path('fuz_dom_ajax_documentation', {'option': name}) }}" class="btn btn-large">{{ name }}</a>&nbsp;
+    {% endfor %}
+</div>
+
+{% endif %}
+
+<hr>
+
+{{ render(controller('FuzDomAjaxBundle:Default:tableOfContents')) }}
+
+{% endblock %}

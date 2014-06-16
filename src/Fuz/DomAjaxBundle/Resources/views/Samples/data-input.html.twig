@@ -1,0 +1,32 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-input.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-input', [
+        {
+            'title': 'Send a classic form',
+            'content': macros.demo_tabs('input-classic-form', true),
+        },
+        {
+            'title': 'Special form behaviours',
+            'content': macros.demo_tabs('input-form-behaviour', true),
+        },
+        {
+            'title': 'Self input selection',
+            'content': macros.demo_tabs('input-self', true),
+        },
+        {
+            'title': 'Send elements contained in a div',
+            'content': macros.demo_tabs('input-form-div', true),
+        },
+        {
+            'title': 'Input selection using classes',
+            'content': macros.demo_tabs('input-class-selector', true),
+        },
+        {
+            'title': 'Send div contents',
+            'content': macros.demo_tabs('input-div-content', true),
+        },
+    ])
+}}

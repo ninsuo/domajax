@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>manual usage - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="../js/jquery.js"></script>
+
+<p>
+    Selector used to call <code>.domAjax()</code> method can return several elements: they will be processed one by one,
+    so each
+    domajax option will be recovered independently. Note that ajax calls are non blocking, so all domajax will run
+    simultaneously.
+    Don't be confused: the point is that several domajax calls will run simultaneously but with their distinct
+    configurations.
+</p>
+
+<!-- demo starts here -->
+
+<input id="get_weather" type="button" value="Get weather" class="btn"/>
+
+<br/><br/>
+
+<div
+        class="weather"
+        style="height: 50px;border:1px solid black;"
+        data-endpoint="manual-usage-multiple-handler.php?page=weather"
+        data-output=""
+        data-highlight-complete=""
+        data-highlight-color="red"
+        data-lock="#get_weather"
+        >No weather yet
+</div>
+
+<br/>
+
+<div
+        class="weather"
+        style="height: 50px;border:1px solid black;"
+        data-endpoint="manual-usage-multiple-handler.php?page=temperature"
+        data-output=""
+        data-highlight-complete=""
+        data-highlight-color="green"
+        >No temperature yet
+</div>
+
+<script type="text/javascript">
+
+    $('#get_weather').click(function () {
+        $('.weather').domAjax();
+    });
+
+</script>
+
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

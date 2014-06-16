@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/event-form.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('event-form', [
+        {
+            'title': 'Send a classic form using ajax',
+            'content': macros.demo_tabs('event-form-classic', true),
+        },
+        {
+            'title': 'Sample with a GET form',
+            'content': macros.demo_tabs('event-form-get', true),
+        },
+        {
+            'title': 'How to use more domajax options',
+            'content': macros.demo_tabs('event-form-options', true),
+        },
+    ])
+}}

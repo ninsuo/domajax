@@ -1,0 +1,28 @@
+    {# src/DomAjaxBundle/Resources/views/Samples/normal-usage.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('normal-usage', [
+        {
+            'title': 'Classic JavaScript call',
+            'content': macros.demo_tabs('manual-usage-classic', true),
+        },
+        {
+            'title': 'With domajax configuration',
+            'content': macros.demo_tabs('manual-usage-config', true),
+        },
+        {
+            'title': 'Overwritting options',
+            'content': macros.demo_tabs('manual-usage-overwrite', true),
+        },
+        {
+            'title': 'New event listener',
+            'content': macros.demo_tabs('manual-usage-listener', true),
+        },
+        {
+            'title': 'Selector and multiple ajax calls',
+            'content': macros.demo_tabs('manual-usage-multiple', true),
+        },
+    ])
+}}

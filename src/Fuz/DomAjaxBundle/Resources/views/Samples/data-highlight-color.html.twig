@@ -1,0 +1,28 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-highlight-color.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-highlight-color', [
+        {
+            'title': 'Successes and errors',
+            'content': macros.demo_tabs('highlight-color-succerror', true),
+        },
+        {
+            'title': 'Change the default color',
+            'content': macros.demo_tabs('highlight-color-default', true),
+        },
+        {
+            'title': 'All in a row',
+            'content': macros.demo_tabs('highlight-color-all-in-a-row', true),
+        },
+        {
+            'title': 'Particular cases',
+            'content': macros.demo_tabs('highlight-color-particular-cases', true),
+        },
+        {
+            'title': 'Highlight colors and events',
+            'content': macros.demo_tabs('highlight-color-events', false),
+        },
+    ])
+}}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-limit - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="../js/jquery.js"></script>
+
+<!-- demo starts here -->
+
+<p>In this example, you can do only 3 ajax calls</p>
+
+<input
+        id="test"
+        type="button"
+        value="Do an ajax call"
+        class="btn domajax click"
+        data-endpoint="limit-three-handler.php"
+        data-output="#output"
+        data-limit="3"
+        />
+
+<br/><br/>
+
+<input
+        type="button"
+        id="get"
+        class="btn"
+        value="Get counter value"
+        />
+
+<br/><br/>
+
+<input
+        type="button"
+        id="reset"
+        class="btn"
+        value="Reset counter value"
+        />
+
+<br/><br/>
+
+<div id="output"></div>
+
+<script type="text/javascript">
+
+    $('#get').click(function() {
+        alert($('#test').data('counter'));
+    });
+
+    $('#reset').click(function() {
+        $('#test').data('counter', 0);
+    });
+
+</script>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

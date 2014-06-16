@@ -1,0 +1,53 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-highlight-color.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-highlight-color</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Change the color (by defaut, blue) of highlighted elements.</p>
+            <h4>Available events: data-highlight-color-before, data-highlight-color-complete, data-highlight-color-success, data-highlight-color-failure, data-highlight-color-empty, data-highlight-color-not-empty</h4>
+            <p>
+                Default color for highlighting is blue. But you can change this default color using <em>data-highlight-color</em>. You can also
+                define a color according to an event: this is common to see text highlighting green when an ajax call has been proceeded; and red
+                if an error occured. Distinguish highlights according to events is possible using <em>data-highlight-color-(event)</em>.
+            </p>
+            <p>
+                <div class="alert alert-warning">
+                    <em>data-highlight-color</em> should be used with <em>data-highlight</em> option.
+                </div>
+                <div class="alert alert-info">
+                    If <em>data-highlight-color</em> is used without event, it will be the default color for highlighting (instead of blue).
+                </div>
+                <div class="alert alert-info">
+                    <em>data-highlight</em> content will be used as selector for each <em>data-highlight-color-*</em> that do not have their corresponding <em>data-highlight-color-*</em> defined. See "Particular cases" example.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-highlight="(selector to highlight)"</li>
+                            <li>data-highlight-color="(color to use for highlighting)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-highlight="#save"</li>
+                            <li>data-highlight-color="yellow"</li>
+                            <li>data-highlight-color-success="green"</li>
+                            <li>data-highlight-color-failure="red"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

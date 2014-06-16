@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-highlight-color - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    This test will demonstrates about all <em>data-highlight-color</em> events in 2 buttons.
+    Look at "highlight colors and events" example for detailed information.
+</p>
+
+<!-- demo starts here -->
+
+<input
+        type="button"
+        value="Success and Failures"
+        class="btn domajax click"
+        data-endpoint="highlight-color-all-in-a-row-handler.php?type=codes"
+        data-highlight=""
+        data-highlight-color-before="#FFFF00"
+        data-highlight-color-success="#00FF00"
+        data-highlight-color-failure="#FF0000"
+        />
+
+<br/>
+
+<input
+        type="button"
+        value="Empty and Not empty"
+        class="btn domajax click"
+        data-endpoint="highlight-color-all-in-a-row-handler.php?type=content"
+        data-highlight=""
+        data-highlight-color-before="#00FFFF"
+        data-highlight-color-empty="#FF00FF"
+        data-highlight-color-not-empty="#FFFFFF"
+        />
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-domajax.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-domajax', [
+        {
+            'title': 'Progression',
+            'content': macros.demo_tabs('domajax-progress', true),
+        },
+        {
+            'title': 'Step by step',
+            'content': macros.demo_tabs('domajax-steps', true),
+        },
+        {
+            'title': 'Domajax and events',
+            'content': macros.demo_tabs('domajax-events', false),
+        },
+    ])
+}}

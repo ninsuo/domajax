@@ -1,0 +1,106 @@
+
+{# How does it work #}
+
+<div class="row-fluid">
+    <h2>How does it work ?</h2>
+    <div>
+        <div class="span7">
+            A <i>classic</i> ajax call is made this way  :
+            <ul>
+                <li>A user fills <i>a form</i> and post it to an <i>endpoint</i> that will process that form</li>
+                <li>Endpoint validates and saves data, and prepares <i>a response</i></li>
+                <li>The response is put inside a <i>container</i>, such as a <code>div</code>, to be seen by user</li>
+            </ul>
+            Using domajax, those requirements are specified inside the dom.
+            <ul>
+                <li>Endpoint is set inside <code>data-endpoint</code> attribute</li>
+                <li>Input container (where are input fields) is set inside <code>data-input</code> attribute</li>
+                <li>Output container (where to put the response) is set inside <code>data-output</code> attribute</li>
+                <li>Finally, domajax is automatically launched if <code>domajax click</code> is put on the <code>class</code> attribute</li>
+            </ul>
+            Of course, this is the <i>basic</i> usage of domajax, it can be triggered on <code>keyup</code> and on <code>change</code> and
+            other events if you wish. There is also a lot of built-in options, such as auto-lock on the input fields (to avoid double-posting), data
+            replacements and toggles (used for example to put a nice <i>wait gif</i> when your ajax calls are processing), and callbacks for more flexibility.
+        </div>
+        <div class="span5 text-right">
+            <img src="{{ asset('img/basic_ajax_call.png') }}" alt="A basic ajax call" />
+        </div>
+    </div>
+
+</div>
+
+<p>
+    All demonstrations are loaded inside iframe tags so you can see their source code easily. While validating an ajax form,
+    it is possible that the response appears outside the iframe. Just click "resize" below each examples to make the iframe
+    size fit to its contents.
+</p>
+
+{{
+    macros.demos_tabs('introduction', [
+        {
+            'title': 'Hello, world!',
+            'content': macros.demo_tabs('introduction', true),
+        },
+        {
+            'title': 'How looks a simple form',
+            'content': macros.demo_tabs('input-classic-form', true),
+        },
+        {
+            'title': 'Only one field is enough',
+            'content': macros.demo_tabs('input-self', true),
+        },
+        {
+            'title': 'Sending static data such as ids',
+            'content': macros.demo_tabs('input-attr-table', true, 'php'),
+        },
+         {
+             'title': 'Dealing with JSON responses',
+             'content': macros.demo_tabs('output-json-clock', true),
+         },
+         {
+             'title': 'Disable an entire form during the ajax call',
+             'content': macros.demo_tabs('lock-form', true),
+         },
+         {
+             'title': 'Highlight contents after ajax calls',
+             'content': macros.demo_tabs('highlight-succerror', true),
+         },
+         {
+             'title': 'Visually distinguish successes and failures',
+             'content': macros.demo_tabs('highlight-color-succerror', true),
+         },
+         {
+             'title': 'Call custom JavaScript functions if required',
+             'content': macros.demo_tabs('callback-basic', true),
+         },
+         {
+             'title': 'Or even execute inline-defined javascript code',
+             'content': macros.demo_tabs('script-alert', true),
+         },
+         {
+             'title': 'Put a waiting gif during ajax calls',
+             'content': macros.demo_tabs('replace-search', true),
+         },
+         {
+             'title': 'Manage progress bars easily',
+             'content': macros.demo_tabs('domajax-progress', true),
+         },
+         {
+             'title': 'Compatible with REST web-services',
+             'content': macros.demo_tabs('raw-rest', true, 'php'),
+         },
+         {
+             'title': 'Built-in enter-to-save change event',
+             'content': macros.demo_tabs('event-change-tick', true),
+         },
+         {
+             'title': 'Built-in type-watched keyup event',
+             'content': macros.demo_tabs('event-keyup-nickname', true),
+         },
+         {
+             'title': 'Or use domajax as a classic jQuery plugin',
+             'content': macros.demo_tabs('manual-usage-classic', true),
+         },
+    ])
+}}
+

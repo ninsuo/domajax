@@ -1,0 +1,16 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-limit.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-limit', [
+        {
+            'title': 'Limited to 3 calls',
+            'content': macros.demo_tabs('limit-three', true),
+        },
+        {
+            'title': 'Asynchronous loading',
+            'content': macros.demo_tabs('limit-async', false),
+        },
+    ])
+}}

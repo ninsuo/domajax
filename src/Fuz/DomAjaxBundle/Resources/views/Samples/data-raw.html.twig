@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-raw.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-raw', [
+        {
+            'title': 'Simple example',
+            'content': macros.demo_tabs('raw-simple', true),
+        },
+        {
+            'title': 'User-given data',
+            'content': macros.demo_tabs('raw-user', true),
+        },
+        {
+            'title': 'Rest example',
+            'content': macros.demo_tabs('raw-rest', true, 'php'),
+        },
+    ])
+}}

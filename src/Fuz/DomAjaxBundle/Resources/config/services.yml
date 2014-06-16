@@ -1,0 +1,30 @@
+parameters:
+    fuz_tools.twig.file_extension.class: Fuz\DomAjaxBundle\Twig\Extension\FileExtension
+    fuz_tools.twig.remote_file_extension.class: Fuz\DomAjaxBundle\Twig\Extension\RemoteFileExtension
+    fuz_tools.twig.text2img_extension.class: Fuz\DomAjaxBundle\Twig\Extension\Text2ImgExtension
+    fuz_tools.twig.hash_extension.class: Fuz\DomAjaxBundle\Twig\Extension\HashExtension
+
+services:
+    fuz_tools.twig.file_extension:
+        class: '%fuz_tools.twig.file_extension.class%'
+        arguments: ['@kernel']
+        tags:
+          - { name: twig.extension }
+
+    fuz_tools.twig.remote_file_extension:
+        class: '%fuz_tools.twig.remote_file_extension.class%'
+        arguments: ['@kernel']
+        tags:
+          - { name: twig.extension }
+
+    fuz_tools.twig.text2img_extension:
+        class: '%fuz_tools.twig.text2img_extension.class%'
+        arguments: []
+        tags:
+          - { name: twig.extension }
+
+    fuz_tools.twig.hash_extension:
+      class: '%fuz_tools.twig.hash_extension.class%'
+      arguments: []
+      tags:
+        - { name: twig.extension }

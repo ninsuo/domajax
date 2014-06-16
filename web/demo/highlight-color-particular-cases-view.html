@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-highlight-color - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<!-- demo starts here -->
+
+<p>
+    If <em>data-highlight</em> is used alone without <em>data-highlight-color</em>, <em>data-highlight-color</em> is
+    set to blue.
+</p>
+
+<input
+        type="button"
+        value="This button will highlight in blue.."
+        class="btn domajax click"
+        data-endpoint="highlight-color-particular-cases-handler.php?test=blue"
+        data-output=""
+        data-highlight=""
+        />
+
+<br/><br/>
+
+<p>
+    If <em>data-highlight-color</em> is used alone without <em>data-highlight</em>, <em>data-highlight</em> is
+    set to an empty string ( "" ) so the current domajax element will be highlighted.
+</p>
+
+<input
+        type="button"
+        value="There are no data-highlight, so..."
+        class="btn domajax click"
+        data-endpoint="highlight-color-particular-cases-handler.php?test=nohighlight"
+        data-output=""
+        data-highlight-color="red"
+        />
+
+<br/><br/>
+
+<p>
+    When you are using <em>data-highlight</em> alone, it is an alias for <em>data-highlight-success</em>. But, if you
+    are using
+    <em>data-highlight</em> and some <em>data-highlight-color-(event)</em> options, then <em>data-highlight</em> will
+    apply for the <em>(event)s</em> specified, and no more for <em>success</em> event if <em>data-highlight-color-success</em>
+    is
+    not defined.
+</p>
+
+<input
+        type="button"
+        value="This button will highlight if response is empty..."
+        class="btn domajax click"
+        data-endpoint="highlight-color-particular-cases-handler.php?test=nonempty"
+        data-output=""
+        data-highlight=""
+        data-highlight-color-empty="#00FF00"
+        />
+
+<br/><br/>
+
+<p>
+    If <em>data-highlight-color-complete</em> and <em>data-highlight-color-success</em> (or <em>failure</em>) are
+    defined,
+    if the ajax call succeed, the <em>data-highlight-color-complete</em> color will be used. In fact, both highlights
+    will be made but as
+    jQuery executes <em>complete</em> callback just after <em>success</em>, there will be no time to see the
+    <em>success</em>
+    color.
+</p>
+
+<input
+        type="button"
+        value="Complete is red, Success is green..."
+        class="btn domajax click"
+        data-endpoint="highlight-color-particular-cases-handler.php"
+        data-highlight=""
+        data-highlight-color-complete="red"
+        data-highlight-color-success="green"
+        />
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

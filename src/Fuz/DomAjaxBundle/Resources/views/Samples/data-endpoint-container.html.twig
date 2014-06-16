@@ -1,0 +1,24 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-endpoint.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-endpoint-container', [
+        {
+            'title': 'Usage with a span',
+            'content': macros.demo_tabs('endpoint-container-span', true),
+        },
+        {
+            'title': 'Usage with an hidden div',
+            'content': macros.demo_tabs('endpoint-container-div', true),
+        },
+        {
+            'title': 'Usage with an hidden input',
+            'content': macros.demo_tabs('endpoint-container-input', true),
+        },
+        {
+            'title': 'Usage with a textarea',
+            'content': macros.demo_tabs('endpoint-container-textarea', true),
+        },
+    ])
+}}

@@ -1,0 +1,12 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-cache.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-cache', [
+        {
+            'title': 'Basic example',
+            'content': macros.demo_tabs('cache-basic', true),
+        },
+    ])
+}}

@@ -1,0 +1,28 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-output.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-output', [
+        {
+            'title': 'Output sent to a div',
+            'content': macros.demo_tabs('output-sent-div', true),
+        },
+        {
+            'title': 'Output sent to the domajax container (input field)',
+            'content': macros.demo_tabs('output-sent-self', true),
+        },
+        {
+            'title': 'Output sent to the domajax container itself',
+            'content': macros.demo_tabs('output-sent-self-container', true),
+        },
+        {
+            'title': 'Multiple output containers',
+            'content': macros.demo_tabs('output-multiple-target', true),
+        },
+        {
+            'title': 'Output and events',
+            'content': macros.demo_tabs('output-events', false),
+        },
+    ])
+}}

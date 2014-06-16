@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-lock - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    You can specify in which event you want to put your fields readonly. On the following examples, php handlers do a 3
+    seconds sleep
+    to give you the time to see the difference between each events. Also, the lock selector is empty, meaning that only
+    the button you
+    click will be affected.
+</p>
+
+<!-- demo starts here -->
+
+<table class="table">
+    <tr>
+        <th style="width: 10%;">Event</th>
+        <th style="width: 70%;">Description</th>
+        <th style="width: 10%;">Test 1</th>
+        <th style="width: 10%;">Test 2</th>
+    </tr>
+
+    <!-- data-lock -->
+    <tr>
+        <td>data-lock</td>
+        <td>
+            <p>
+                Without event, <em>data-lock</em> is a combination of <em>data-lock-before</em> and <em>data-unlock-complete</em>.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=success"
+                    data-lock=""
+                    />
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <!-- data-lock-before -->
+    <tr>
+        <td>data-lock-before</td>
+        <td>
+            <p>
+                Will lock selected fields before the ajax call.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=success"
+                    data-lock-before=""
+                    />
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <!-- data-lock-complete -->
+    <tr>
+        <td>data-lock-complete</td>
+        <td>
+            <p>
+                Will lock selected fields after the ajax call, whatever if it failed or succeeded.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=success"
+                    data-lock-complete=""
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=failure"
+                    data-lock-complete=""
+                    />
+        </td>
+    </tr>
+
+    <!-- data-lock-success -->
+    <tr>
+        <td>data-lock-success</td>
+        <td>
+            <p>
+                Will lock selected fields after the ajax call, only if it succeeded.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=success"
+                    data-lock-success=""
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=failure"
+                    data-lock-success=""
+                    />
+        </td>
+    </tr>
+
+    <!-- data-lock-failure -->
+    <tr>
+        <td>data-lock-failure</td>
+        <td>
+            <p>
+                Will lock selected fields after the ajax call, only if it failed.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=success"
+                    data-lock-failure=""
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=failure"
+                    data-lock-failure=""
+                    />
+        </td>
+    </tr>
+
+    <!-- data-lock-empty -->
+    <tr>
+        <td>data-lock-empty</td>
+        <td>
+            <p>
+                Will lock selected fields after the ajax call, only if the response is empty.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=empty"
+                    data-lock-empty=""
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=not-empty"
+                    data-lock-empty=""
+                    />
+        </td>
+    </tr>
+
+    <!-- data-lock-not-empty -->
+    <tr>
+        <td>data-lock-not-empty</td>
+        <td>
+            <p>
+                Will lock selected fields after the ajax call, only if the response is not empty.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=empty"
+                    data-lock-not-empty=""
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="lock-events-handler.php?action=not-empty"
+                    data-lock-not-empty=""
+                    />
+        </td>
+    </tr>
+
+</table>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

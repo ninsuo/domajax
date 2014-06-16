@@ -1,0 +1,42 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-domajax.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-domajax</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Process another ajax call when an event occurs.</p>
+            <h4>Available events: data-domajax-before, data-domajax-complete, data-domajax-success (default), data-domajax-failure, data-domajax-empty, data-domajax-not-empty</h4>
+            <br/>
+            <p>
+                If you're doing long-polling connections, or even if you're displaying progression information, you need to
+                chain your ajax calls. With <em>data-domajax-(event)</em>, you set the selector that contains the
+                domajax configuration to process the next ajax call.
+            </p>
+            <div class="alert alert-info">
+                If <em>data-domajax</em> is set but empty, the domajax element will be used as selector.
+            </div>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-domajax="(selector that contains the domajax call)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-domajax="#progress"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

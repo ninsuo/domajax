@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-domajax - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="../js/jquery.js"></script>
+
+<p>
+    In this example, domajax are chained so they are made one after the other on success.
+</p>
+
+<!-- demo starts here -->
+
+<input
+        type="button"
+        id="step1"
+        value="Run"
+        class="btn domajax click"
+        data-endpoint="domajax-steps-handler.php"
+        data-domajax-success="#step2"
+        data-output="#step1-output"
+        data-replace="#step1-output"
+        data-replace-by="#wait"
+        data-lock=""
+        />
+
+<br/><br/>
+
+<p>
+             <span id="step1-output">
+                 <i class="icon-remove"></i>
+             </span>
+    Step 1
+</p>
+
+<p>
+             <span
+                     id="step2"
+                     data-endpoint="domajax-steps-handler.php"
+                     data-domajax-success="#step3"
+                     data-output="#step2-output"
+                     data-replace="#step2-output"
+                     data-replace-by="#wait"
+                     data-lock="#step1"
+                     ></span>
+             <span id="step2-output">
+                 <i class="icon-remove"></i>
+             </span>
+    Step 2
+</p>
+
+<p>
+             <span
+                     id="step3"
+                     data-endpoint="domajax-steps-handler.php"
+                     data-output="#step3-output"
+                     data-replace="#step3-output"
+                     data-replace-by="#wait"
+                     data-lock="#step1"
+                     ></span>
+             <span id="step3-output">
+                 <i class="icon-remove"></i>
+             </span>
+    Step 3
+</p>
+
+<div id="wait" style="display:none;">
+    <i class="icon-cog"></i>
+</div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

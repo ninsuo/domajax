@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-domajax - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<!-- demo starts here -->
+
+<p>
+    To give you an example of all possible usages of <em>data-domajax</em>, we will process 2 ajax calls : the first one
+    is the main domajax
+    call contained inside buttons, and the second one is referenced by <em>data-domajax-(event)</em> option.
+</p>
+
+<table class="table">
+<tr>
+    <th style="width: 10%;">Event</th>
+    <th style="width: 70%;">Description</th>
+    <th style="width: 10%;">Test 1</th>
+    <th style="width: 10%;">Test 2</th>
+</tr>
+
+<!-- data-domajax-before -->
+<tr>
+    <td>data-domajax-before</td>
+    <td>
+        <p>
+            Will process both ajax calls at the same time.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=success"
+                data-output="#output-A"
+                data-domajax-before="#domajax-A"
+                />
+
+        <div>Call 1: <span id="output-A">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-A"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+
+<!-- data-domajax-complete -->
+<tr>
+    <td>data-domajax-complete</td>
+    <td>
+        <p>
+            Will process the other ajax call when the first one will complete, whatever if it failed or succeeded.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Success test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=success"
+                data-output="#output-B"
+                data-domajax-complete="#domajax-B"
+                />
+
+        <div>Call 1: <span id="output-B">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-B"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Failure test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=failure"
+                data-output="#output-C"
+                data-domajax-complete="#domajax-C"
+                />
+
+        <div>Call 1: <span id="output-C">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-C"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+</tr>
+
+<!-- data-domajax-success -->
+<tr>
+    <td>data-domajax-success</td>
+    <td>
+        <p>
+            Will process the other ajax call if the first one succeed.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Success test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=success"
+                data-output="#output-D"
+                data-domajax-success="#domajax-D"
+                />
+
+        <div>Call 1: <span id="output-D">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-D"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Failure test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=failure"
+                data-output="#output-e"
+                data-domajax-success="#domajax-E"
+                />
+
+        <div>Call 1: <span id="output-E">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-E"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+</tr>
+
+<!-- data-domajax-failure -->
+<tr>
+    <td>data-domajax-failure</td>
+    <td>
+        <p>
+            Will process the other ajax call if the first one fails.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Success test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=success"
+                data-output="#output-F"
+                data-domajax-failure="#domajax-F"
+                />
+
+        <div>Call 1: <span id="output-F">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-F"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Failure test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=failure"
+                data-output="#output-G"
+                data-domajax-failure="#domajax-G"
+                />
+
+        <div>Call 1: <span id="output-G">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-G"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+</tr>
+
+<!-- data-domajax-empty -->
+<tr>
+    <td>data-domajax-empty</td>
+    <td>
+        <p>
+            Will process the other ajax call only if the first ajax response is empty.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Empty response test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=empty"
+                data-output="#output-H"
+                data-domajax-empty="#domajax-H"
+                />
+
+        <div>Call 1: <span id="output-H">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-H"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Not empty response test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=not-empty"
+                data-output="#output-I"
+                data-domajax-empty="#domajax-I"
+                />
+
+        <div>Call 1: <span id="output-I">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-I"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+</tr>
+
+<!-- data-domajax-not-empty -->
+<tr>
+    <td>data-domajax-not-empty</td>
+    <td>
+        <p>
+            Will process the other ajax call only if the first ajax response is not empty.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Empty response test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=empty"
+                data-output="#output-J"
+                data-domajax-not-empty="#domajax-J"
+                />
+
+        <div>Call 1: <span id="output-J">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-J"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Not empty response test"
+                class="btn domajax click"
+                data-endpoint="domajax-events-handler.php?action=not-empty"
+                data-output="#output-K"
+                data-domajax-not-empty="#domajax-K"
+                />
+
+        <div>Call 1: <span id="output-K">-</span></div>
+        <div>Call 2:
+                       <span
+                               id="domajax-K"
+                               data-endpoint="domajax-events-handler.php"
+                               data-output=""
+                               >-</span>
+        </div>
+    </td>
+</tr>
+
+</table>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

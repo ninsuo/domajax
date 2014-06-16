@@ -1,0 +1,24 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-highlight.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-highlight', [
+        {
+            'title': 'Basic examples',
+            'content': macros.demo_tabs('highlight-basics', true),
+        },
+        {
+            'title': 'Lazy saving',
+            'content': macros.demo_tabs('highlight-saving', true),
+        },
+        {
+            'title': 'Success and error',
+            'content': macros.demo_tabs('highlight-succerror', true),
+        },
+        {
+            'title': 'Highlight and events',
+            'content': macros.demo_tabs('highlight-events', false),
+        },
+    ])
+}}

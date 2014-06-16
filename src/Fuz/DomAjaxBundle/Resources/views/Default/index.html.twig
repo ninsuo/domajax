@@ -1,0 +1,27 @@
+{% extends 'FuzDomAjaxBundle:Default:base.html.twig' %}
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{% block contents %}
+
+<span id="home-top"></span>
+{% include 'FuzDomAjaxBundle:General:introduction.html.twig' %}
+
+<span id="introduction-top"></span>
+{% include 'FuzDomAjaxBundle:General:how-does-it-work.html.twig' %}
+{% include 'FuzDomAjaxBundle:General:framework-integration.html.twig' %}
+
+<hr>
+
+<span id="get-started-top"></span>
+{% include 'FuzDomAjaxBundle:General:get-started.html.twig' %}
+
+<hr>
+
+{{ render(controller('FuzDomAjaxBundle:Default:tableOfContents')) }}
+
+<hr>
+
+<span id="about-top"></span>
+{% include 'FuzDomAjaxBundle:General:about.html.twig' %}
+
+{% endblock %}

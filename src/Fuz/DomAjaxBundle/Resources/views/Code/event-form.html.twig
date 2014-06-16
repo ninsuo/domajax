@@ -1,0 +1,36 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-event-form.html.twig #}
+
+<div class="row-fluid">
+    <h2>Ajax forms made even more easy</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">A built-in event handler let you send classic forms using ajax by simply adding the <i>domajax</i> class to your submit button.</p>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>This event let you avoid setting the <em>data-endpoint</em>, <em>data-input</em> and <em>data-method</em> attributes on a submit button when your form is standard, as all those options are already set in the &lt;form&gt; definition.</p>
+                        <ul>
+                        <li>data-endpoint is automatically took from the action="" attribute</li>
+                        <li>data-input is set to the form id (automatically generated if undefined)</li>
+                        <li>data-method is took from the method="" attribute of the form</li>
+                        </ul>
+                        <p>To use this event handler, just add the <em>domajax</em> class to your submit button. If you want to add more domajax options (such as <em>data-output</em> or <em>data-lock</em>), you also need to add them to the submit button.</p>
+                     </div>
+                 </div>
+            <div class="well">
+                 <div class="row-fluid">
+                    <div class="span12">
+                        <h4>
+                            <u>Examples</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>&lt;input type=&quot;submit&quot; class=&quot;domajax&quot; value=&quot;Send&quot /&gt;</li>
+                            <li>&lt;input type=&quot;submit&quot; class=&quot;domajax&quot; data-output=&quot;#output&quot; value=&quot;Send&quot /&gt;</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>

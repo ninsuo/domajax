@@ -1,0 +1,46 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-lock.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-lock</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Disable form fields when ajax calls are in progress</p>
+            <h4>Available events: data-lock-before (default), data-lock-complete, data-lock-success, data-lock-failure, data-lock-empty, data-lock-not-empty</h4>
+            <p><em>data-lock</em> let you put form fields readonly while ajax calls are processing, avoiding double posts, synchronization issues and so on. It takes
+            any form field(s) or form field container(s), and will lock everything inside. By passing a high-level container, such as <b>body</b>, you will lock all form fields of
+            the entire page. Sometimes, you will need to lock fields only when your ajax calls fail or succeed, in such case you will use <em>data-lock-failed</em> or
+            <em>data-lock-success</em> events instead of the simple <em>data-lock</em>. All available events are listed above.</p>
+            <p><div class="alert alert-info">
+                  Automatically set <em>data-unlock-complete</em> to the same element as <em>data-lock</em> if you are using
+               <em>data-lock</em> instead of a specific event (<em>data-lock-before</em>, ...). This way, your elements are
+                  automatically unlocked when the ajax call has ended.
+               </div></p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-lock="container-to-lock"</li>
+                            <li>data-lock="(empty)"</li>
+                            <li>data-lock-(event)="container-to-lock"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-lock="#input"</li>
+                            <li>data-lock=""</li>
+                            <li>data-lock-if-not-empty="#input"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

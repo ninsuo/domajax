@@ -1,0 +1,24 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-callback.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-callback', [
+        {
+            'title': 'Basic example',
+            'content': macros.demo_tabs('callback-basic', true),
+        },
+        {
+            'title': 'Form validation',
+            'content': macros.demo_tabs('callback-form', true),
+        },
+        {
+            'title': 'Please log-in',
+            'content': macros.demo_tabs('callback-log-in', true),
+        },
+        {
+            'title': 'Callback and events',
+            'content': macros.demo_tabs('callback-events', false),
+        },
+    ])
+}}

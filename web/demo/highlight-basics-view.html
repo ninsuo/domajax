@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-highlight - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    Those simple demonstrations shows what we are calling "highlighting".
+</p>
+
+<!-- demo starts here -->
+
+<input
+        type="button"
+        value="Click me"
+        class="btn domajax click"
+        data-lock=""
+        data-endpoint="highlight-basics-handler.php"
+        data-highlight=""
+        />
+
+<br/><br/>
+
+<input
+        id="hello"
+        type="text"
+        placeholder="Edit me"
+        class="btn domajax keyup"
+        data-endpoint="highlight-basics-handler.php"
+        data-lock=""
+        data-highlight="#hello"
+        data-highlight-color="red"
+        />
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

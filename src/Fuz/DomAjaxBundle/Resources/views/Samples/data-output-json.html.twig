@@ -1,0 +1,16 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-output-json.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-output-json', [
+        {
+            'title': 'A simple clock example',
+            'content': macros.demo_tabs('output-json-clock', true),
+        },
+        {
+            'title': 'A form with messages and results',
+            'content': macros.demo_tabs('output-json-message', false, 'php'),
+        },
+    ])
+}}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-unlock - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    You can specify in which event you want to unlock your fields. On the following examples, php handlers do a 3
+    seconds sleep
+    to give you the time to see the difference between each events.
+</p>
+
+<!-- demo starts here -->
+
+<table class="table">
+    <tr>
+        <th style="width: 10%;">Event</th>
+        <th style="width: 50%;">Description</th>
+        <th style="width: 20%;">Test 1</th>
+        <th style="width: 20%;">Test 2</th>
+    </tr>
+
+    <!-- data-unlock -->
+    <tr>
+        <td>data-unlock</td>
+        <td>
+            <p>
+                Without event, <em>data-unlock</em> has the same behaviour as <em>data-unlock-complete</em>.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=success"
+                    data-unlock="#test-a"
+                    />
+            <input id="test-a" type="button" value="Result" disabled/>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <!-- data-unlock-before -->
+    <tr>
+        <td>data-unlock-before</td>
+        <td>
+            <p>
+                Will unlock selected fields before the ajax call. May be useful for a "cancel" button for example.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=success"
+                    data-unlock-before="#test-b"
+                    />
+            <input id="test-b" type="button" value="Result" disabled/>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <!-- data-unlock-complete -->
+    <tr>
+        <td>data-unlock-complete</td>
+        <td>
+            <p>
+                Will unlock selected fields after the ajax call, whatever if it failed or succeeded. Useful to repost
+                data.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=success"
+                    data-unlock-complete="#test-c"
+                    />
+            <input id="test-c" type="button" value="Result" disabled/>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=failure"
+                    data-unlock-complete="#test-d"
+                    />
+            <input id="test-d" type="button" value="Result" disabled/>
+        </td>
+    </tr>
+
+    <!-- data-unlock-success -->
+    <tr>
+        <td>data-unlock-success</td>
+        <td>
+            <p>
+                Will unlock selected fields after the ajax call, only if it succeeded.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=success"
+                    data-unlock-success="#test-e"
+                    />
+            <input id="test-e" type="button" value="Result" disabled/>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=failure"
+                    data-unlock-success="#test-f"
+                    />
+            <input id="test-f" type="button" value="Result" disabled/>
+        </td>
+    </tr>
+
+    <!-- data-unlock-failure -->
+    <tr>
+        <td>data-unlock-failure</td>
+        <td>
+            <p>
+                Will unlock selected fields after the ajax call, only if it failed.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=success"
+                    data-unlock-failure="#test-g"
+                    />
+            <input id="test-g" type="button" value="Result" disabled/>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=failure"
+                    data-unlock-failure="#test-h"
+                    />
+            <input id="test-h" type="button" value="Result" disabled/>
+        </td>
+    </tr>
+
+    <!-- data-unlock-empty -->
+    <tr>
+        <td>data-unlock-empty</td>
+        <td>
+            <p>
+                Will unlock selected fields after the ajax call, only if the response is empty.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=empty"
+                    data-unlock-empty="#test-i"
+                    />
+            <input id="test-i" type="button" value="Result" disabled/>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=not-empty"
+                    data-unlock-empty="#test-j"
+                    />
+            <input id="test-j" type="button" value="Result" disabled/>
+        </td>
+    </tr>
+
+    <!-- data-unlock-not-empty -->
+    <tr>
+        <td>data-unlock-not-empty</td>
+        <td>
+            <p>
+                Will unlock selected fields after the ajax call, only if the response is not empty.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=empty"
+                    data-unlock-not-empty="#test-k"
+                    />
+            <input id="test-k" type="button" value="Result" disabled/>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="unlock-events-handler.php?action=not-empty"
+                    data-unlock-not-empty="#test-l"
+                    />
+            <input id="test-l" type="button" value="Result" disabled/>
+        </td>
+    </tr>
+
+</table>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

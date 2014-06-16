@@ -1,0 +1,42 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-output.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-output</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">This is the easiest way to add new data in the current page after an ajax request.</p>
+            <h4>Available events: data-output-success (default), data-output-failure, data-output-empty, data-output-not-empty</h4>
+            <br/>
+            <p>There is several ways to use this option.</p>
+            <ul>
+                <li>With an <strong>empty</strong> string, this option will assign received contents to itself. If the domajax container is an input field, this may be useful for autocompletions for example. If the domajax container is a div (or another html container) called using <i>$('#myDiv').domAjax()</i>, ajax response will be inserted as inner HTML of that element.</li>
+                <li>With a <strong>selector</strong>, this option will insert the ajax response on all the matching elements, without regarding their type (input fields or containers).</li>
+            </ul>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usages</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-output=""</li>
+                            <li>data-output="selector"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Examples</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-output=""</li>
+                            <li>data-output="#my_div"</li>
+                            <li>data-output=".some_class"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

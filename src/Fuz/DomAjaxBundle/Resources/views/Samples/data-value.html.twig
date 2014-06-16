@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-valueW.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-value', [
+        {
+            'title': 'Typing silent keys',
+            'content': macros.demo_tabs('value-typing', true),
+        },
+        {
+            'title': 'Other selector',
+            'content': macros.demo_tabs('value-other', true),
+        },
+        {
+            'title': 'Multiple fields selector',
+            'content': macros.demo_tabs('value-form', true),
+        },
+    ])
+}}

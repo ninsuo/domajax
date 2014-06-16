@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-highlight-color - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    You can specify a different color according to ajax events. This may be useful to highlight failures in red, and
+    successes in green for example. Here is a global summary.
+</p>
+
+<!-- demo starts here -->
+
+<table class="table">
+<tr>
+    <th style="width: 10%;">Event</th>
+    <th style="width: 70%;">Description</th>
+    <th style="width: 10%;">Test 1</th>
+    <th style="width: 10%;">Test 2</th>
+</tr>
+
+<!-- data-highlight-color -->
+<tr>
+    <td>data-highlight-color</td>
+    <td>
+        <p>
+            Without event, <em>data-highlight-color</em> changes the default color.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Yellow"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=success"
+                data-highlight=""
+                data-highlight-color="#FFFF00"
+                />
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Red"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=success"
+                data-highlight=""
+                data-highlight-color="#FF0000"
+                />
+    </td>
+</tr>
+
+<!-- data-highlight-color-before -->
+<tr>
+    <td>data-highlight-color-before</td>
+    <td>
+        <p>
+            Will highlight selected elements to the given color before the ajax call
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Pink"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=success"
+                data-highlight=""
+                data-highlight-color-before="#FF00FF"
+                />
+    </td>
+    <td>&nbsp;</td>
+</tr>
+
+<!-- data-highlight-color-complete -->
+<tr>
+    <td>data-highlight-color-complete</td>
+    <td>
+        <p>
+            Will highlight selected elements to the given color after the ajax call, whatever if it failed or succeeded.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Success test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=success"
+                data-highlight=""
+                data-highlight-color-complete="#00FFFF"
+                />
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Failure test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=failure"
+                data-highlight=""
+                data-highlight-color-complete="#FFFFFF"
+                />
+    </td>
+</tr>
+
+<!-- data-highlight-color-success -->
+<tr>
+    <td>data-highlight-color-success</td>
+    <td>
+        <p>
+            Will highlight selected elements to the given color after the ajax call, only if it succeeded.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Success test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=success"
+                data-highlight=""
+                data-highlight-color-success="#00FF00"
+                />
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Failure test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=failure"
+                data-highlight=""
+                data-highlight-color-success="#00FF00"
+                />
+    </td>
+</tr>
+
+<!-- data-highlight-color-failure -->
+<tr>
+    <td>data-highlight-color-failure</td>
+    <td>
+        <p>
+            Will highlight selected elements after the ajax call, only if it failed.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Success test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=success"
+                data-highlight=""
+                data-highlight-color-failure="#FF0000"
+                />
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Failure test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=failure"
+                data-highlight=""
+                data-highlight-color-failure="#FF0000"
+                />
+    </td>
+</tr>
+
+<!-- data-highlight-color-empty -->
+<tr>
+    <td>data-highlight-color-empty</td>
+    <td>
+        <p>
+            Will highlight selected elements to the given color after the ajax call, only if the response is empty.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Empty response test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=empty"
+                data-highlight=""
+                data-highlight-color-empty="#2EFEF7"
+                />
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Not empty response test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=not-empty"
+                data-highlight=""
+                data-highlight-color-empty="#2EFEF7"
+                />
+    </td>
+</tr>
+
+<!-- data-highlight-color-not-empty -->
+<tr>
+    <td>data-highlight-color-not-empty</td>
+    <td>
+        <p>
+            Will highlight selected elements to the given color after the ajax call, only if the response is not empty.
+        </p>
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Empty response test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=empty"
+                data-highlight=""
+                data-highlight-color-not-empty="#D0A9F5"
+                />
+    </td>
+    <td>
+        <input
+                type="button"
+                value="Not empty response test"
+                class="btn domajax click"
+                data-endpoint="highlight-color-events-handler.php?action=not-empty"
+                data-highlight=""
+                data-highlight-color-not-empty="#D0A9F5"
+                />
+    </td>
+</tr>
+
+</table>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+parameters:
+    
+    domajax-options:
+      data-endpoint:
+        description: Sets ajax endpoint, the remote file that will be requested.
+        see-also: [data-endpoint-container]
+      data-endpoint-container:
+        description: Sets ajax endpoint from contents of a selector.
+        see-also: [data-endpoint]
+      data-input:
+        description: This is the easiest way to send input data to the requested page.
+        see-also: [data-input-attr, data-raw]
+      data-input-attr:
+        description: Add static data to your ajax request parameters to avoid input hidden fields.
+        see-also: [data-input, data-raw]
+      data-output:
+        description: This is the easiest way to add new data in the current page after an ajax request.
+        see-also: [data-output-json, data-callback, data-script]
+      data-output-json:
+        description: Dispatch an ajax JSON response to several parts of a page
+        see-also: [data-output, data-callback, data-script]
+      data-confirm:
+        description: Display a confirmation dialog before starting the ajax call
+        see-also: [data-callback, data-script]
+      data-lock:
+        description: Disable form fields when ajax calls are in progress
+        see-also: [data-unlock, data-replace, data-callback, data-script]
+      data-unlock:
+        description: Enable form fields when ajax calls are given back.
+        see-also: [data-lock, data-replace, data-callback, data-script]
+      data-replace:
+        description: Temporarily replaces element contents during an ajax call.
+        see-also: [data-callback, data-script]
+      data-highlight:
+        description: Highlights a selector to a given color (blue by default) when events occurs.
+        see-also: [data-highlight-color, data-callback, data-script]
+      data-highlight-color:
+        description: Change the color (by defaut, blue) of highlighted elements.
+        see-also: [data-highlight, data-callback, data-script]
+      data-counter:
+        description: Contains number of times the ajax call has been made.
+        see-also: [data-limit]
+      data-limit:
+        description: Limit your ajax call to a given number of times.
+        see-also: [data-counter]
+      data-callback:
+        description: Calls a javascript function when a specified event occurs.
+        see-also: [data-script]
+      data-script:
+        description: Executes given javascript code when an event occurs.
+        see-also: [data-callback]
+      data-delay:
+        description: Sets a type watcher delay (milisecs) before processing an ajax call.
+        see-also: [data-value]
+      data-value:
+        description: Process the ajax request only if selector's inputs have been updated.
+        see-also: [data-delay, data-input, data-input-attr]
+      data-alias:
+        description: Inherit domajax options from another element
+        see-also: [data-domajax]
+      data-domajax:
+        description: Process another ajax call when an event occurs.
+        see-also: [data-alias]
+      data-raw:
+        description: Set the ajax request body manually.
+        see-also: [data-method]
+      data-method:
+        description: Change the HTTP method used to reach the endpoint
+        see-also: [data-raw]
+      data-cache:
+        description: Prevents browsers from getting cached response instead of calling your endpoint.
+        see-also:
+
+    domajax-events:
+      event-form:
+        title: Ajax forms without any configuration
+        description: Prevents browsers from getting cached response instead of calling your endpoint.
+      event-click:
+        title: Ajax when clicking elements (buttons, links...)
+        description: A common way to run ajax calls is to click on links, buttons, or even a div element.
+      event-change:
+        title: Ajax when changing form values
+        description: Process a form field as soon as its state or value changed.
+      event-keyup:
+        title: Ajax when typing text (autocomplete, helpers...)
+        description: Processes the ajax call while typing
+      manual-usage:
+        title: Manual JavaScript usage
+        description: Use JavaScript code instead of classes to run your domajax calls

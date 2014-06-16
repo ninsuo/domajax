@@ -1,0 +1,39 @@
+<div class="row-fluid">
+    <h2>Table of contents</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">All the documentation at a glance</p>
+
+            <h4>Domajax options</h4>
+
+            <ul class="nav nav-list">
+                {% for name, option in options %}
+                <li>
+                    <a href="{{ path('fuz_dom_ajax_documentation', {'option': name}) }}">
+                        <span class="black">{{ name }}</span> &nbsp;&nbsp; {{ option.description }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            {#
+            <dl class="dl-horizontal">
+                {% for name, option in options %}
+                <a href="{{ path('fuz_dom_ajax_documentation', {'option': name}) }}#{{ name }}-top">
+                    <dt class="black">{{ name }}</dt><dd>{{ option.description }}</dd>
+                </a>
+                {% endfor %}
+            </dl>
+            #}
+
+            <h4>And more with domajax</h4>
+
+            <ul class="nav nav-list">
+                {% for name, event in events %}
+                <li><a href="{{ path('fuz_dom_ajax_documentation', {'option': name}) }}#{{ name }}-top">{{ event.title }}</a></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>

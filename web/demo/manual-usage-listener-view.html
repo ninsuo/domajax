@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>manual usage - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="../js/jquery.js"></script>
+
+<p>
+    By default, domajax gives you <em>click</em>, <em>change</em> and <em>keyup</em> events. You can add your own
+    implementation of any jQuery event to do javascript calls.
+</p>
+
+<!-- demo starts here -->
+
+<div
+        id="output"
+        class="domajax doubleclick"
+        style="width: 200px;height:100px;border:1px solid black;background-color:#FFAAAA;"
+        data-endpoint="manual-usage-listener-handler.php"
+        data-output="#output"
+        >Double-click inside me
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.domajax.doubleclick').dblclick(function (e) {
+            $(this).domAjax();
+        });
+    });
+
+</script>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-replace.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-replace', [
+        {
+            'title': 'Search form',
+            'content': macros.demo_tabs('replace-search', true),
+        },
+        {
+            'title': 'Multiple replacements',
+            'content': macros.demo_tabs('replace-multi', true),
+        },
+        {
+            'title': 'Domajax object can overwrite itself',
+            'content': macros.demo_tabs('replace-itself', true),
+        },
+    ])
+}}

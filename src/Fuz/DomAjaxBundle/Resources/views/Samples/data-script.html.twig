@@ -1,0 +1,24 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-script.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-script', [
+        {
+            'title': 'Alert!',
+            'content': macros.demo_tabs('script-alert', true),
+        },
+        {
+            'title': 'Please wait...',
+            'content': macros.demo_tabs('script-wait', true),
+        },
+        {
+            'title': 'Cancelling the ajax call',
+            'content': macros.demo_tabs('script-cancel', true),
+        },
+        {
+            'title': 'Script and events',
+            'content': macros.demo_tabs('script-events', false),
+        },
+    ])
+}}

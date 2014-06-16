@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>This example shows you that the same form posting behavours apply using domajax : checkboxes that are not checked as
+    well as disabled fields are not sent.</p>
+<br/>
+
+<!-- demo starts here -->
+
+<form id="input" action="input-classic-form-handler.php" method="post" target="_blank">
+
+    <label>Some text :</label>
+    <input name="sample-text" type="text" value="Hello, world!"/>
+
+    <label class="checkbox">
+        A checkbox
+        <input name="sample-check" type="checkbox"/>
+    </label>
+
+    <label>A select :</label>
+    <select name="sample-select">
+        <option value="Paris">Paris</option>
+        <option value="Nantes">Nantes</option>
+        <option value="Bordeaux">Bordeaux</option>
+    </select>
+
+    <label>Radio buttons</label>
+    <label class="radio inline">
+        <input name="sample-radio" type="radio" value="Foo" checked/> Foo
+    </label>
+    <label class="radio inline">
+        <input name="sample-radio" type="radio" value="Bar"/> Bar
+    </label>
+
+    <label>A textarea</label>
+    <textarea name="sample-textarea">Foo, bar!</textarea>
+
+    <label>An hidden field</label>
+    <input name="sample-hidden" type="hidden" value="Hidden data"/>
+
+    <label>A read-only field</label>
+    <input name="sample-readonly" type="text" value="Readonly data" readonly/>
+
+    <label>A disabled field</label>
+    <input name="sample-disabled" type="text" value="Disabled data" disabled/>
+
+    <br/>
+
+    <input
+            type="button"
+            value="Send using domajax"
+            class="btn domajax click"
+            data-endpoint="input-classic-form-handler.php"
+            data-input="#input"
+            data-output="#output"
+            />
+
+    <br/><br/>
+
+    <input
+            type="submit"
+            value="Send using a standard post"
+            class="btn"
+            />
+
+</form>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-counter.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-counter</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Contains number of times the ajax call has been made.</p>
+            <p>
+                Each time an ajax request is made, <em>data-counter</em> is incremented. Combined
+                with <em>data-limit</em>, you can control the maximum number of times your ajax call
+                can be made. At any time, you can use <code>$('selector').data('counter')</code> to get
+                the counter's current value.
+            </p>
+            <p>
+                <div class="alert alert-info">
+                    By default, <em>data-counter</em> is set to <b>0</b>.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-counter="(initial number)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-counter="0"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

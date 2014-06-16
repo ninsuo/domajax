@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/event-click.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('event-click', [
+        {
+            'title': 'A simple link',
+            'content': macros.demo_tabs('event-click-link', true),
+        },
+        {
+            'title': 'Whatever the nature of the element',
+            'content': macros.demo_tabs('event-click-nature', true),
+        },
+        {
+            'title': 'Triggering a click',
+            'content': macros.demo_tabs('event-click-trigger', true),
+        },
+    ])
+}}

@@ -1,0 +1,4 @@
+fuz_dom_ajax:
+    resource: "@FuzDomAjaxBundle/Resources/config/routing.yml"
+    prefix:   /
+

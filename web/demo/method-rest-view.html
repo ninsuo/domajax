@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-method - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    This is a simple simulation of REST web services. If you have a debugger, look at the HTTP method
+    used, and the request's body. In this sample you can create, update, delete and list variables.
+</p>
+
+<!-- demo starts here -->
+
+Enter a variable name:
+<br/>
+<input type="text" id="variable" name="variable"/>
+
+<br/><br/>
+
+<input
+        type="button"
+        value="Create"
+        class="btn domajax click"
+        data-endpoint="method-rest-handler.php"
+        data-raw="#variable"
+        data-raw-type="text"
+        data-output="#output"
+        data-method="put"
+        />
+
+&nbsp;
+
+<input
+        type="button"
+        value="Delete"
+        class="btn domajax click"
+        data-endpoint="method-rest-handler.php"
+        data-raw="#variable"
+        data-raw-type="text"
+        data-output="#output"
+        data-method="delete"
+        />
+
+&nbsp;
+
+<input
+        type="button"
+        value="List"
+        class="btn domajax click"
+        data-endpoint="method-rest-handler.php"
+        data-raw="#variable"
+        data-raw-type="text"
+        data-output="#output"
+        data-method="options"
+        />
+
+<br/><br/>
+
+<input
+        type="button"
+        value="Increment"
+        class="btn domajax click"
+        data-endpoint="method-rest-handler.php"
+        data-raw="#variable"
+        data-raw-type="text"
+        data-output="#output"
+        data-method="post"
+        />
+
+&nbsp;
+
+<input
+        type="button"
+        value="Get value"
+        class="btn domajax click"
+        data-endpoint="method-rest-handler.php"
+        data-raw="#variable"
+        data-raw-type="text"
+        data-output="#output"
+        data-method="get"
+        />
+
+&nbsp;
+
+<input
+        type="button"
+        value="Decrement"
+        class="btn domajax click"
+        data-endpoint="method-rest-handler.php"
+        data-raw="#variable"
+        data-raw-type="text"
+        data-output="#output"
+        data-method="head"
+        />
+
+<br/><br/>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

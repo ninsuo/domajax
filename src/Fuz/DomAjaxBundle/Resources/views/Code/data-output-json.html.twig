@@ -1,0 +1,37 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-output-json.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-output-json</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Dispatch an ajax JSON response to several parts of a page</p>
+            <p>If your ajax response needs to refresh several parts of the page, you will send it as json from server side. Configure your domajax call to associate a json attribute to an output selector, and domajax will automatically dispatch your results to their right containers.</p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-output-json="attr-A attr-B"</li>
+                            <li>data-json-attr-A="#outputA"</li>
+                            <li>data-json-attr-B="#outputB"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-output-json="message result"</li>
+                            <li>data-json-message="#msg"</li>
+                            <li>data-json-result="#contents"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

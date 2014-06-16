@@ -1,0 +1,20 @@
+
+#output {
+    margin-top: 10px;
+    min-height: 20px;
+    padding: 5px 5px 5px 5px;
+    background-color: #EEEEEE;
+}
+
+#sample {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.go-back-home {
+    padding-top: 15px;
+    font-size:8px;
+    text-align:center;
+}

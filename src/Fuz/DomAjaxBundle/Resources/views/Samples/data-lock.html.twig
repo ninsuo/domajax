@@ -1,0 +1,24 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-lock.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-lock', [
+        {
+            'title': 'A simple button example',
+            'content': macros.demo_tabs('lock-button', true),
+        },
+        {
+            'title': 'Self lock',
+            'content': macros.demo_tabs('lock-self', true),
+        },
+        {
+            'title': 'Put an entire form read-only',
+            'content': macros.demo_tabs('lock-form', true),
+        },
+        {
+            'title': 'Lock and events',
+            'content': macros.demo_tabs('lock-events', false),
+        },
+    ])
+}}

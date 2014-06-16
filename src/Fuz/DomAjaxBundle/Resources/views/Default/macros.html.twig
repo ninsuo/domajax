@@ -1,0 +1,95 @@
+
+{% macro demos_tabs(id, list) %}
+
+{% set id = id ~ '-demos' %}
+
+<div id="{{ id }}"  class="row-fluid">
+    <div class="span12">
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                {% for index, elem in list %}
+                    <li class="demo-switcher {% if index == 0 %}active{% endif %}"><a href="#{{ id }}-tab{{ index }}" data-toggle="tab">{{ elem.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="tab-content">
+                {% for index, elem in list %}
+                    <div class="tab-pane fade {% if index == 0 %}active{% endif %} in" id="{{ id }}-tab{{ index }}">
+                        <p>{{ elem.content | raw }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endmacro %}
+
+{% macro demo_tabs(id, show_code, extension) %}
+
+{% if extension is empty %}
+    {% set extension = 'html' %}
+{% endif %}
+
+<div id="{{ id }}">
+    <ul id="{{ id }}-tabs" class="nav nav-tabs">
+        <li class="active">
+            <a data-toggle="tab" href="#{{ id }}-demo">Live Demo</a>
+        </li>
+        <li><a data-toggle="tab" href="#{{ id }}-html">Complete HTML</a></li>
+        <li><a data-toggle="tab" href="#{{ id }}-php">PHP Handler</a></li>
+        <li><a href="{{ asset('demo/' ~ id ~ '-view.' ~ extension) }}" target="_new">Open in new tab</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="{{ id }}-demo" class="tab-pane fade active in">
+            {% if show_code %}
+                <div class="fullwidth">
+                    <iframe id="frame-{{ id }}" class="demo-iframe fullwidth" src="{{ asset('demo/' ~ id ~ '-view.' ~ extension) }}"></iframe>
+                    <div class="center">
+                        <a href="#" class="demo-switcher small no-click">If the result is not displayed correctly, click here to resize iframe above.</a>
+                    </div>
+                </div>
+                <div class="fullwidth">
+                    <p>This form looks like this:</p>
+                    <pre class="prettyprint">{{ asset_demo('demo/' ~ id ~ '-view.' ~ extension) }}</pre>
+                </div>
+            {% else %}
+                <div class="fullwidth">
+                    <iframe id="frame-{{ id }}" class="demo-iframe fullwidth" src="{{ asset('demo/' ~ id ~ '-view.' ~ extension) }}"></iframe>
+                    <div class="center">
+                        <a href="#" class="demo-switcher small no-click">If the result is not displayed correctly, click here to resize iframe above.</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div id="{{ id }}-html" class="tab-pane fade">
+            <p>
+                demo/{{ id }}-view.{{ extension }}
+                &nbsp;&nbsp;&nbsp;
+                <a href="#" class="select-text" data-selector="#{{ id }}-html-content">Select all</a>
+            </p>
+            <pre id="{{ id }}-html-content" class="prettyprint">{{ asset_contents('demo/' ~ id ~ '-view.' ~ extension) }}</pre>
+        </div>
+        <div id="{{ id }}-php" class="tab-pane fade">
+            <p>
+                demo/{{ id }}-handler.php
+                &nbsp;&nbsp;&nbsp;
+                <a href="#" class="select-text" data-selector="#{{ id }}-php-content">Select all</a>
+            </p>
+            <pre id="{{ id }}-php-content" class="prettyprint">{{ asset_contents('demo/' ~ id ~ '-handler.php') }}</pre>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        prettyPrint();
+        $('.demo-iframe').load(function() {
+            setTimeout(function() {
+                resizeFrames();
+                hideGoHome();
+            }, 200);
+        });
+    });
+</script>
+
+{% endmacro %}

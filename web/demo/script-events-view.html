@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-script - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<!-- demo starts here -->
+
+<table class="table">
+    <tr>
+        <th style="width: 10%;">Event</th>
+        <th style="width: 70%;">Description</th>
+        <th style="width: 10%;">Test 1</th>
+        <th style="width: 10%;">Test 2</th>
+    </tr>
+
+    <!-- data-script-before -->
+    <tr>
+        <td>data-script-before</td>
+        <td>
+            <p>
+                Will be called before the ajax call, after <em>data-confirm</em> and before all other options.
+                <br/>
+                Given context: <b>elem</b> (jQuery element that contains the domajax call)
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=success"
+                    data-script-before="alert('Hello, world!')"
+                    />
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <!-- data-script-complete -->
+    <tr>
+        <td>data-script-complete</td>
+        <td>
+            <p>
+                Will be called after the ajax call, whatever if it failed or succeeded.
+                <br/>
+                Given context: <b>elem</b>
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=success"
+                    data-script-complete="alert('Hello, world!')"
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=failure"
+                    data-script-complete="alert('Hello, world!')"
+                    />
+        </td>
+    </tr>
+
+    <!-- data-script-success -->
+    <tr>
+        <td>data-script-success</td>
+        <td>
+            <p>
+                Will be called after the ajax call, only if it succeeded.
+                <br/>
+                Given context: <b>elem</b>, <b>response</b>, <b>textStatus</b>, <b>jqXHR</b>
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=success"
+                    data-script-success="alert('Hello, world!')"
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=failure"
+                    data-script-success=""
+                    />
+        </td>
+    </tr>
+
+    <!-- data-script-failure -->
+    <tr>
+        <td>data-script-failure</td>
+        <td>
+            <p>
+                Will be called after the ajax call, only if it failed.
+                <br/>
+                Given context: <b>elem</b>, <b>response</b>, <b>errorThrown</b>, <b>jqXHR</b>
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=success"
+                    data-script-failure="alert('Hello, world!')"
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=failure"
+                    data-script-failure="alert('Hello, world!')"
+                    />
+        </td>
+    </tr>
+
+    <!-- data-script-empty -->
+    <tr>
+        <td>data-script-empty</td>
+        <td>
+            <p>
+                Will be called after the ajax call, only if the response is empty.
+                <br/>
+                Given context: <b>elem</b>, <b>response</b>, <b>textStatus</b>, <b>jqXHR</b>
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=empty"
+                    data-script-empty="alert('Hello, world!')"
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=not-empty"
+                    data-script-empty="alert('Hello, world!')"
+                    />
+        </td>
+    </tr>
+
+    <!-- data-script-not-empty -->
+    <tr>
+        <td>data-script-not-empty</td>
+        <td>
+            <p>
+                Will be called after the ajax call, only if the response is not empty.
+                <br/>
+                Given context: <b>elem</b>, <b>response</b>, <b>textStatus</b>, <b>jqXHR</b>
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=empty"
+                    data-script-not-empty="alert('Hello, world!')"
+                    />
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="script-events-handler.php?action=not-empty"
+                    data-script-not-empty="alert('Hello, world!')"
+                    />
+        </td>
+    </tr>
+
+</table>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

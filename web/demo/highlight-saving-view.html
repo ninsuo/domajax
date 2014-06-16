@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-highlight - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    Fill the form and watch out the output...
+    <br/>
+    Note that <em>data-alias</em> option avoids repeating domajax options.
+</p>
+
+<!-- demo starts here -->
+
+<div id="input">
+
+    <label for="fruit">Enter a fruit</label>
+    <input
+            type="text"
+            id="fruit"
+            class="btn domajax keyup"
+            data-endpoint="highlight-saving-handler.php"
+            data-input="#input"
+            data-output="#output"
+            data-highlight=""
+            />
+
+    <br/><br/>
+
+    <label for="vegetable">Enter a vegetable</label>
+    <input
+            type="text"
+            id="vegetable"
+            class="btn domajax keyup"
+            data-endpoint="highlight-saving-handler.php"
+            data-input="#input"
+            data-output="#output"
+            data-highlight=""
+            />
+
+</div>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

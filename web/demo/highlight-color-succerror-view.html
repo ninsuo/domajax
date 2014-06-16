@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-highlight-color - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<!-- demo starts here -->
+
+<div id="inputs">
+
+    Do you want the server to send a 500 error (so the ajax call will fail)?
+
+    <br/><br/>
+
+    <input type="radio" name="want_error" value="yes"/> Yes
+    &nbsp;&nbsp;
+    <input type="radio" name="want_error" value="no" checked/> No
+
+    <br/><br/>
+
+    <input
+            type="button"
+            value="Go"
+            class="btn domajax click"
+            data-endpoint="highlight-color-succerror-handler.php"
+            data-input="#inputs"
+            data-highlight="#hello"
+            data-highlight-color-success="green"
+            data-highlight-color-failure="red"
+            />
+
+    <br/><br/>
+
+    <div id="hello">This text will be highlighted according to the ajax call status</div>
+
+</div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

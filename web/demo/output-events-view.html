@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-output - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    When you are working with complex UIs, this is sometimes useful to distinguish stateless responses from
+    others. For example, if an input is just auto-saved, there is nothing to output anywhere so the response
+    might be empty; but if an input needs to update the form, the new form might be contained in the response,
+    and should replace the old one.
+</p>
+
+<!-- demo starts here -->
+
+<table class="table">
+    <tr>
+        <th style="width: 10%;">Event</th>
+        <th style="width: 70%;">Description</th>
+        <th style="width: 10%;">Test 1</th>
+        <th style="width: 10%;">Test 2</th>
+    </tr>
+
+    <!-- data-output -->
+    <tr>
+        <td>data-output</td>
+        <td>
+            <p>
+                By default, <em>data-output</em> works like <em>data-output-success</em>.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=success"
+                    data-output="#test-a"
+                    />
+
+            <div id="test-a">(original content)</div>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=failure"
+                    data-output="#test-b"
+                    />
+
+            <div id="test-b">(original content)</div>
+        </td>
+    </tr>
+
+    <!-- data-output-success -->
+    <tr>
+        <td>data-output-success</td>
+        <td>
+            <p>
+                Will put ajax response into the given selector, only if the ajax call succeeded.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=success"
+                    data-output-success="#test-c"
+                    />
+
+            <div id="test-c">(original content)</div>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=failure"
+                    data-output-success="#test-d"
+                    />
+
+            <div id="test-d">(original content)</div>
+        </td>
+    </tr>
+
+    <!-- data-output-failure -->
+    <tr>
+        <td>data-output-failure</td>
+        <td>
+            <p>
+                Will put ajax error into the given selector if the ajax call failed.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Success test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=success"
+                    data-output-failure="#test-e"
+                    />
+
+            <div id="test-e">(original content)</div>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Failure test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=failure"
+                    data-output-failure="#test-f"
+                    />
+
+            <div id="test-f">(original content)</div>
+        </td>
+    </tr>
+
+    <!-- data-output-empty -->
+    <tr>
+        <td>data-output-empty</td>
+        <td>
+            <p>
+                Will put ajax response into the given selector, only if the ajax response was empty.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=empty"
+                    data-output-empty="#test-g"
+                    />
+
+            <div id="test-g">(original content)</div>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=not-empty"
+                    data-output-empty="#test-h"
+                    />
+
+            <div id="test-h">(original content)</div>
+        </td>
+    </tr>
+
+    <!-- data-output-not-empty -->
+    <tr>
+        <td>data-output-not-empty</td>
+        <td>
+            <p>
+                Will put ajax response into the given selector, only if the ajax response was not empty.
+            </p>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Empty response test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=empty"
+                    data-output-not-empty="#test-i"
+                    />
+
+            <div id="test-i">(original content)</div>
+        </td>
+        <td>
+            <input
+                    type="button"
+                    value="Not empty response test"
+                    class="btn domajax click"
+                    data-endpoint="output-events-handler.php?action=not-empty"
+                    data-output-not-empty="#test-j"
+                    />
+
+            <div id="test-j">(original content)</div>
+        </td>
+    </tr>
+
+</table>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

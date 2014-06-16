@@ -1,0 +1,12 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-limit.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-counter', [
+        {
+            'title': 'Counter value',
+            'content': macros.demo_tabs('counter-value', true),
+        },
+    ])
+}}

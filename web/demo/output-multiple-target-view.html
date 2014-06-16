@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-output - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    In some cases, you may need to put the ajax response in several elements. Using classes selectors, this is
+    very easy, as shown in this example.
+</p>
+
+<!-- demo starts here -->
+
+<label for="firstname">Enter your first name</label>
+<input class="input" type="text" id="firstname" name="firstname" value="Mike"/>
+
+<br/>
+
+<label for="lastname">Enter your last name</label>
+<input class="input" type="text" id="lastname" name="lastname" value="Steller"/>
+
+<br/>
+
+<input
+        type="button"
+        value="Send"
+        class="btn domajax click"
+        data-endpoint="output-multiple-target-handler.php"
+        data-input=".input"
+        data-output=".output"
+        />
+
+<br/><br/>
+
+<label>HTML container output :</label>
+<div class="output">&nbsp;</div>
+
+<br/>
+
+<label>Input field container output :</label>
+<input type="text" class="output" readonly/>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

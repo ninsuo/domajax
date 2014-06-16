@@ -1,0 +1,49 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-replace.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-replace, data-replace-by</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Temporarily replaces element contents during an ajax call.</p>
+            <br/>
+            <p>
+                When an ajax call is processing, this is common to see a wait gif to tell the final user his request is processing. <em>data-replace</em> let you
+                replace contents from a selector by contents of another selector during the ajax call. Whatever if the ajax call fails or succeed, old contents will be
+                restaured to the container.
+                <br/>
+                If <em>data-replace</em> is empty, the element containing the ajax call will be replaced itself. If <em>data-replace-by</em> is empty, the element
+                containing the ajax call will replace contents of the <em>data-replace</em>'s selector.
+            </p>
+            <div class="alert alert-warning">
+                <em>data-replace</em> uses <em>data-replace-backup</em> and <em>data-replace-backup-container</em> attributes internally.
+            </div>
+            <div class="alert alert-info">
+                <em>data-replace</em> cannot be used alone, without <em>data-replace-by</em>.
+            </div>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-replace="(target selector)"</li>
+                            <li>data-replace-by="(source selector)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-replace="#output"</li>
+                            <li>data-replace-by="#waitgif"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

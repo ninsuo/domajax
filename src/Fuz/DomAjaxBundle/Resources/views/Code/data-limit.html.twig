@@ -1,0 +1,43 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-limit.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-limit</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Limit your ajax call to a given number of times.</p>
+            <p>
+                domajax will work as soon as <em>data-counter</em> < <em>data-limit</em>. This means, if <em>data-limit</em> is set to
+                a number greater than -1, your ajax call will be limited to this number of calls. When this limit is reached, your domajax declaration
+                will not work anymore, until you reset <em>data-counter</em>, <code>$('selector').data('counter', '0');</code>.
+            </p>
+            <p>
+                <div class="alert alert-info">
+                    By default, <em>data-limit</em> is set to <b>-1</b> (unlimited).
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-limit="(number of ajax calls)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-limit="1"</li>
+                            <li>data-limit="3"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

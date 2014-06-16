@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-alias - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    If you are creating self-posting forms, that sends a form each time a field is updated (here using <b>keyup</b> but
+    you'll
+    probably use <b>change</b> event in real life), <em>data-alias</em> is useful to avoid repeating all domajax
+    configuration
+    for each fields.
+</p>
+
+<!-- demo starts here -->
+
+<div id="input">
+
+    <label for="fruit">Enter a fruit</label>
+    <input
+            type="text"
+            id="fruit"
+            value="orange"
+            class="btn domajax keyup"
+            data-endpoint="alias-autosave-handler.php"
+            data-input="#input"
+            data-output="#output"
+            />
+
+    <br/><br/>
+
+    <label for="vegetable">Enter a vegetable</label>
+    <input
+            type="text"
+            id="vegetable"
+            class="btn domajax keyup"
+            data-alias="#fruit"
+            />
+
+</div>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

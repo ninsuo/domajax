@@ -1,0 +1,16 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-method.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-method', [
+        {
+            'title': 'Basic example',
+            'content': macros.demo_tabs('method-buttons', true),
+        },
+        {
+            'title': 'REST web services',
+            'content': macros.demo_tabs('method-rest', true),
+        },
+    ])
+}}

@@ -1,0 +1,34 @@
+{# src/DomAjaxBundle/Resources/views/Code/event-keyup.html.twig #}
+
+<div class="row-fluid">
+    <h2>Ajax when typing text (autocomplete, helpers...)</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Processes the ajax call while typing</p>
+            <br/>
+            <p>
+               Useful and well-known for auto-completions and filters, the domajax keyup event will process the ajax call while
+               users are typing visible characters. This event uses <em>data-delay</em> to set a type watcher (by default 800
+               milisecs), so the ajax call is only processed if user stops typing during 800 milisecs. This event also uses
+               <em>data-value</em> to avoid processing ajax requests when invisible keys are pressed, such as control, alt,
+               arrow keys, shift and so on.
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>class="domajax keyup"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                       &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

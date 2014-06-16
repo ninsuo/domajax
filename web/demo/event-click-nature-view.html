@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>click event - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    Clicks can be handled on links, buttons, but also divs, spans or whatever element you want.
+</p>
+
+<!-- demo starts here -->
+
+<!-- domajax configuration, to avoid copy/pasting every option 3 times -->
+<div
+        id="demo"
+        data-endpoint="event-click-nature-handler.php"
+        data-highlight-complete=""
+        data-highlight-color="red"
+        data-output="#output"
+        ></div>
+
+<input
+        type="button"
+        class="domajax click"
+        data-alias="#demo"
+        value="I am a button"
+        />
+
+<br/><br/>
+
+<a
+        href="#"
+        class="domajax click"
+        data-alias="#demo"
+        >I am a link</a>
+
+<br/><br/>
+
+<div
+        class="domajax click"
+        data-alias="#demo"
+        style="width: 200px; height: 100px; background-color:#FFFFCC"
+        >I am a div
+</div>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

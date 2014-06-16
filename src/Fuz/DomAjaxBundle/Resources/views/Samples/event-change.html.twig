@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/event-change.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('event-change', [
+        {
+            'title': 'Simple checkbox',
+            'content': macros.demo_tabs('event-change-tick', true),
+        },
+        {
+            'title': 'Auto-saving fields',
+            'content': macros.demo_tabs('event-change-autosave', true),
+        },
+        {
+            'title': 'Enter to save',
+            'content': macros.demo_tabs('event-change-enter', true),
+        },
+    ])
+}}

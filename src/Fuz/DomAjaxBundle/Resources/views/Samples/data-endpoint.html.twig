@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-endpoint.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-endpoint', [
+        {
+            'title': 'Relative URL',
+            'content': macros.demo_tabs('endpoint-relative', true),
+        },
+        {
+            'title': 'Absolute URL',
+            'content': macros.demo_tabs('endpoint-absolute', true),
+        },
+        {
+            'title': 'Full URL',
+            'content': macros.demo_tabs('endpoint-full', true),
+        },
+    ])
+}}

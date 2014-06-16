@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-unlock - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+
+<p>
+    Clicking on "Test it" will enable the text field.
+</p>
+
+<!-- demo starts here -->
+
+<input
+        type="button"
+        value="Test it!"
+        class="btn domajax click"
+        data-endpoint="unlock-button-handler.php"
+        data-unlock=".field"
+        />
+
+<br/><br/>
+
+<input type="text" disabled class="field" value="I am a text field"/>
+<input type="button" disabled id="lock" class="btn field" value="Disable again"/>
+
+<script type="text/javascript">
+
+    $('#lock').click(function () {
+        $('.field').attr('disabled', 'disabled');
+    });
+
+</script>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+</body>
+</html>

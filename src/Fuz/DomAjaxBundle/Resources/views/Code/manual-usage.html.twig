@@ -1,0 +1,53 @@
+{# src/DomAjaxBundle/Resources/views/Code/normal-usage.html.twig #}
+
+<div class="row-fluid">
+    <h2>Manual JavaScript usage</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Use JavaScript code instead of classes to run your domajax calls</p>
+            <br/>
+            <p>
+                Domajax intends to provide common ajax features inside the dom using class and data attributes, but when you
+                have specific requirements, it comes to be difficult to use domajax built-in events (stored in classes, for example
+              <em>domajax click</em>), and you need to run your ajax calls manually, using JavaScript code.
+              <br/><br/>
+                 The code is natural for jQuery users: <code>$(selector).domAjax(options);</code>
+              <br/>
+                 - Selector can be anything, but if you do not provide any domajax option, selected elements should contain required options.
+              <br/>
+                 - Options are optional (as they may be defined in the selected elements dom), and are the very same as those specified in
+                 <em>data-</em> attributes, but without <em>data-</em>. For example, instead of giving <em>data-input="#inputs"</em>
+                    you will use <code>$(selector).domAjax({input: '#inputs'});</code>.
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li><code>$(selector).domAjax(options);</code></li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                                The <em>Hello, world!</em> demo becomes:
+                           <br/><br/>
+<pre>$(document).domAjax({
+   endpoint: 'introduction-handler.php',
+   input: '#inputs',
+   lock: '#inputs',
+   output: '#output'
+});</pre>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

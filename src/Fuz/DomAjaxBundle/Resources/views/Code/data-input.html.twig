@@ -1,0 +1,43 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-input.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-input</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">This is the easiest way to send input data to the requested page.</p>
+            <p>There is several ways to use this option.</p>
+            <ul>
+                <li>With an <strong>empty</strong> string, this option sends content of the element that contains the domajax call.</li>
+                <li>With a <strong>selector</strong>, this option will send all matching inputs (inputs, selects, textareas) that matches or that are contained inside the selected elements.</li>
+                <li>If a selected container is not an input field and does not contain any input fields, the whole html inside that container will be sent instead.</li>
+            </ul>
+            <p><div class="alert alert-block"><b>Warning</b>: like on a standard form, disabled fields and unchecked checkboxes are never sent.</div></p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usages</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-input=""</li>
+                            <li>data-input="#container"</li>
+                            <li>data-input=".class"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Examples</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-input=""</li>
+                            <li>data-input="#form"</li>
+                            <li>data-input=".to-send"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

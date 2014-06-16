@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>data-input-attr - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="../js/jquery.js"></script>
+
+<p>
+    This is also possible to send multiple information, by specifying each data attribute
+    on the <i>data-input-attr</i> attribute, separated by a space. Each input sent using this
+    way will take the HTML5's data name as name, overloading <i>data-input</i> fields
+    that use the same name.
+</p>
+
+<!-- demo starts here -->
+
+<div
+        id="input"
+        style="width: 100%; height: 150px; border: 1px solid black; background-color: #AAAAAA;"
+        data-endpoint="input-attr-cursor-handler.php"
+        data-output="#output"
+        data-input-attr="left top"
+        >Click somewhere inside this box
+</div>
+
+<script type="text/javascript">
+
+    $('#input').click(function (e) {
+        var offset_t = $(this).offset().top - $(window).scrollTop();
+        var offset_l = $(this).offset().left - $(window).scrollLeft();
+        var left = Math.round((e.clientX - offset_l));
+        var top = Math.round((e.clientY - offset_t));
+        $(this).data('left', left);
+        $(this).data('top', top);
+        $(this).domAjax();
+    });
+
+</script>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

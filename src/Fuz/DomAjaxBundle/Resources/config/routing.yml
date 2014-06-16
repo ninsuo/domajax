@@ -1,0 +1,9 @@
+fuz_dom_ajax_homepage:
+    pattern:  /
+    defaults: { _controller: FuzDomAjaxBundle:Default:index }
+    methods:  [GET]
+
+fuz_dom_ajax_documentation:
+    pattern:  /documentation/{option}
+    defaults: { _controller: FuzDomAjaxBundle:Default:documentation }
+    methods:  [GET]

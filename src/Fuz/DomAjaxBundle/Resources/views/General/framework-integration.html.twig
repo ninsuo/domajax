@@ -1,0 +1,49 @@
+{# Framework integration #}
+
+<div class="row-fluid">
+    <h2>Easy integration with frameworks</h2>
+    <div>
+        <div class="span6">
+            <p>
+                Modern applications are built using frameworks, and interfaces are created with
+                <i>real-time posting</i> for better user experiences. This mean, always more
+                interactions, more code and more complexity.
+            </p>
+            <p>
+                Using the dom for such jobs make things clear:
+                <ul>
+                    <li>There is no need to find where is written javascript for a specific input.</li>
+                    <li>There is no need to access element ids, potentially hard to get within a framework.</li>
+                    <li>The required html code is easy to read and easy to maintain.</li>
+                    <li>This is very quick to code new ajax interactions.</li>
+                    <li>New ajax interactions can be added on the fly, even being part of an ajax response.</li>
+                </ul>
+                And more with domajax:
+                <ul>
+                    <li>A container is not necessarily a <code>form</code> tag.</li>
+                    <li>Inputs can be an entire form, a single field or even an html container such as a <code>div</code>.</li>
+                    <li>A lot of options are available, common ajax requirements are covered.</li>
+                </ul>
+            </p>
+
+        </div>
+        <div class="span6">
+            <pre class="prettyprint">
+{% verbatim %}
+// Symfony2 example
+{{
+    form_widget(SearchForm.someFilter, {
+        'attr': {
+            'class': 'domajax click',
+            'data-endpoint': path('search_click_some_filter'),
+            'data-input': '',
+            'data-output': '#searchResults',
+            'data-lock': '',
+        }
+    })
+}}
+{% endverbatim %}
+            </pre>
+        </div>
+    </div>
+</div>

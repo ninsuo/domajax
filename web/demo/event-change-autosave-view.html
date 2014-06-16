@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="index, follow, all"/>
+    <meta name="author" content="Alain Tiemblo"/>
+    <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+    <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+    <title>change event - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../css/demo.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<p>
+    You can update the form below, and press tab key or click outside to save. Isn't it smooth?
+</p>
+
+<!-- demo starts here -->
+
+<div
+        id="demo"
+        data-endpoint="event-change-autosave-handler.php"
+        data-input="#demo"
+        data-output="#output"
+        data-highlight-complete=""
+        data-lock="#demo"
+        >
+
+    <label>Gender :</label>
+    <label id="gender-male" class="radio">
+        <input name="gender" type="radio" value="Male" class="domajax change" data-alias="#demo"
+               data-highlight-complete="#gender-male" checked/> Male
+    </label>
+    <label id="gender-female" class="radio">
+        <input name="gender" type="radio" value="Female" class="domajax change" data-alias="#demo"
+               data-highlight-complete="#gender-female"/> Female
+    </label>
+
+    <label>First Name :</label>
+    <input name="first-name" type="text" value="Mickael" class="domajax change" data-alias="#demo"/>
+
+    <label>Last Name :</label>
+    <input name="last-name" type="text" value="Steller" class="domajax change" data-alias="#demo"/>
+
+    <label>Language :</label>
+    <select name="language" class="domajax change" data-alias="#demo">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="cn">Chinese</option>
+    </select>
+
+    <label>Message :</label>
+    <textarea name="message" class="domajax change" data-alias="#demo">Hello, world!</textarea>
+
+    <label id="steak-label" class="checkbox">
+        <input name="steak" type="checkbox" class="domajax change" data-alias="#demo"
+               data-highlight-complete="#steak-label"/> I like steaks
+    </label>
+
+</div>
+
+<div id="output"></div>
+
+<!-- demo ends here -->
+
+<div class="go-back-home">
+    <a href="http://www.domajax.com">Back to domajax's home</a>
+</div>
+
+<script src="../js/json2.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.js"></script>
+<script src="../js/domajax/jquery.domajax.js"></script>
+</body>
+</html>

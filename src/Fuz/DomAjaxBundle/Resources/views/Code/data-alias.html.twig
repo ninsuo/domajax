@@ -1,0 +1,38 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-alias.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-alias</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Inherit domajax options from another element</p>
+            <p>
+                <em>data-alias</em> takes a selector that contains a domajax configuration, and will apply this configuration to
+                the current element. This avoids to copy/paste a bunch of domajax options several times if they are used in several
+                elements. Note that If <em>data-alias</em> is used with other <em>data-</em> options, <em>data-alias</em>
+                will not overwrite the given options.
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-alias="selector-containing-options"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-alias="#element"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

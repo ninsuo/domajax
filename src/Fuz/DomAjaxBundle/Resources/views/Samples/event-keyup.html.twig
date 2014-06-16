@@ -1,0 +1,16 @@
+{# src/DomAjaxBundle/Resources/views/Samples/event-keyup.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('event-keyup', [
+        {
+            'title': 'Country filter',
+            'content': macros.demo_tabs('event-keyup-filter', true),
+        },
+        {
+            'title': 'Remote validation',
+            'content': macros.demo_tabs('event-keyup-nickname', true),
+        },
+    ])
+}}

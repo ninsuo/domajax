@@ -1,0 +1,52 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-highlight.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-highlight</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Highlights a selector to a given color (blue by default) when events occurs.</p>
+            <h4>Available events: data-highlight-before, data-highlight-complete, data-highlight-success (default), data-highlight-failure, data-highlight-empty, data-highlight-not-empty</h4>
+            <p>
+                This is common to see text highlighting when there are no save button on a form, this text highlighting
+                graphically tells the user that a change has been taken into account. Put a selector inside <em>data-highlight</em>
+                to highlight it when the event occurs.
+                <br/>
+                If you want to highlight different selectors according to events, you can use <em>data-highlight-(event)</em>, and they
+                will be used if this event occurs.
+            </p>
+            <p>
+                <div class="alert alert-warning">
+                    <em>data-highlight</em> requires jquery-ui included, as <code>.animate()</code> method needs jquery ui to process colors.
+                </div>
+                <div class="alert alert-info">
+                    <em>data-highlight</em> used alone (without <em>data-highlight-color</em>) is an alias for <em>data-highlight-success</em>.
+                </div>
+                <div class="alert alert-info">
+                    If <em>data-highlight</em> is empty, element containing the domajax call will be used as highlighted selector.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-highlight="(selector to highlight)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-highlight="#save"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

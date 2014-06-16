@@ -1,0 +1,20 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-unlock.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-unlock', [
+        {
+            'title': 'A simple button example',
+            'content': macros.demo_tabs('unlock-button', true),
+        },
+        {
+            'title': 'More and Less game',
+            'content': macros.demo_tabs('unlock-more-less', true),
+        },
+        {
+            'title': 'Unlock and events',
+            'content': macros.demo_tabs('unlock-events', false),
+        },
+    ])
+}}

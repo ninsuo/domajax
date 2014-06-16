@@ -1,0 +1,51 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-script.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-script</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Executes given javascript code when an event occurs.</p>
+            <h4>Available events: data-script-before, data-script-complete, data-script-success (default), data-script-failure, data-script-empty, data-script-not-empty</h4>
+            <br/>
+            <p>
+                <em>data-script-(event)</em> option allows to execute custom javascript code when an event occurs. You can compare it to
+                <em>onclick</em>, <em>onchange</em> and so on... attributes, but specific for domajax events. If the executed javascript
+                 code returns false, domajax will stop processing your ajax call.
+                 <br/><br/>
+                 Your code receives the same context as <em>data-callback</em>, <b>elem</b> (the jQuery element that contains the ajax call),
+                 <b>response</b>, <b>textStatus</b>, <b>jqXHR</b> (the 3 arguments given by jQuery.ajax to success/error callbacks, set to
+                 undefined on before/complete domajax callbacks).
+                 <br/><br/>
+                 Note that <em>data-script</em> is called before <em>data-callback</em> but after <em>data-confirm</em>. If your script
+                 is too long, use <em>data-callback</em> instead for better code readability.
+            </p>
+            <p>
+                <div class="alert alert-warning">
+                    <em>data-script</em> has no default event, you should use <em>data-script-(event)</em> instead.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-script="(JavaScript code)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-script="alert('Hello, world!');"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

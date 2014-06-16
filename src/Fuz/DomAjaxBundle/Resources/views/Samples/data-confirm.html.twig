@@ -1,0 +1,16 @@
+{# src/DomAjaxBundle/Resources/views/Samples/data-confirm.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('data-confim', [
+        {
+            'title': 'A simple button example',
+            'content': macros.demo_tabs('confirm-button', true),
+        },
+        {
+            'title': 'Entry deletion',
+            'content': macros.demo_tabs('confirm-table', true, 'php'),
+        },
+    ])
+}}

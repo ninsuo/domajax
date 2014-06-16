@@ -1,0 +1,37 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-input-attr.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-input-attr</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Add static data to your ajax request parameters to avoid input hidden fields.</p>
+            <p>When you work on a table with actions (such as edit or delete), that's common to have a line number or a database id(!) or such that identifies each row.</p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-input-attr="dataname [otherdata ...]"</li>
+                            <li>data-dataname="something"</li>
+                            <li>data-otherdata="otherstuff"</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-input-attr="id"</li>
+                            <li>data-id="42"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

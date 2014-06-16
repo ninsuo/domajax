@@ -1,0 +1,51 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-callback.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-callback</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">Calls a javascript function when a specified event occurs.</p>
+            <h4>Available events: data-callback-before, data-callback-complete, data-callback-success, data-callback-failure, data-callback-empty, data-callback-not-empty</h4>
+            <p>
+                Even if domajax tries to handle most ajax use cases to avoid javascript usage, you may need to customize domajax behaviour,
+                such as cancel an ajax call if a form is invalid, or process the ajax response manually.
+                <br/><br/>
+                <em>data-callback-before</em> is processed before other options and before the ajax call. Its callback should return false to abord
+                the ajax call. <br/> Other <em>data-callback-(event)</em> are also processed early after getting the ajax response. Callbacks should return
+                false to abord the standard domajax response processing.
+                <br/><br/>
+                Callbacks take 4 arguments : <b>elem</b> (the jQuery element that contains the ajax call), <b>response</b>, <b>textStatus</b>,
+                <b>jqXHR</b> (the 3 arguments given by jQuery.ajax to success/error callbacks, set to <em>undefined</em> on before/complete domajax callbacks).
+            </p>
+            <p>
+                <div class="alert alert-warning">
+                    <em>data-callback</em> has no default event, you should use <em>data-callback-(event)</em> instead.
+                </div>
+            </p>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-callback-(event)="some_function();"</li>
+                            <li>data-callback-(event)="object.some_namespaced_function()"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-callback-before="checkForm"</li>
+                            <li>data-callback-after="$.processMyJson"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
