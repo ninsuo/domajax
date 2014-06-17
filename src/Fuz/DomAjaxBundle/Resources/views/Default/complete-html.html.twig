@@ -1,0 +1,15 @@
+<p>
+    demo/{{ demo }}-view.{{ extension }}
+    &nbsp;&nbsp;&nbsp;
+    <a href="#" class="select-text" data-selector="#{{ demo }}-html-content">Select all</a>
+</p>
+
+<pre id="{{ demo }}-html-content" class="prettyprint">{{ asset_contents('demo/' ~ demo ~ '-view.' ~ extension) }}</pre>
+
+<script type="text/javascript">
+
+    $(function() {
+        prettyPrint();
+    });
+
+</script>

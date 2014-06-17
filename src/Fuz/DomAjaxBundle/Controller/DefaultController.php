@@ -4,6 +4,8 @@ namespace Fuz\DomAjaxBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
 
 class DefaultController extends Controller
 {
@@ -49,6 +51,52 @@ class DefaultController extends Controller
       );
 
       return $this->render('FuzDomAjaxBundle:Default:document.html.twig', $context);
+   }
+
+   public function completeHTMLAction($demo, $extension)
+   {
+      if (preg_match('/^[a-zA-Z0-9_]+$/', $demo) === false)
+      {
+         return new Response();
+      }
+
+      if (preg_match('/^(php|html)$/', $extension) === false)
+      {
+         return new Response();
+      }
+
+      $file = $this->get('kernel')->getRootDir() . '/../web/demo/' . $demo . '-view.' . $extension;
+      if (!is_file($file))
+      {
+         throw new FileNotFoundException($demo . ' (complete html)');
+      }
+
+      $context = array(
+              'demo' => $demo,
+              'extension' => $extension,
+      );
+
+      return $this->render('FuzDomAjaxBundle:Default:complete-html.html.twig', $context);
+   }
+
+   public function phpHandlerAction($demo)
+   {
+      if (preg_match('/^[a-zA-Z0-9_]+$/', $demo) === false)
+      {
+         return new Response();
+      }
+
+      $file = $this->get('kernel')->getRootDir() . '/../web/demo/' . $demo . '-handler.php';
+      if (!is_file($file))
+      {
+         throw new FileNotFoundException($demo . ' (php handler)');
+      }
+
+      $context = array(
+              'demo' => $demo,
+      );
+
+      return $this->render('FuzDomAjaxBundle:Default:php-handler.html.twig', $context);
    }
 
 }

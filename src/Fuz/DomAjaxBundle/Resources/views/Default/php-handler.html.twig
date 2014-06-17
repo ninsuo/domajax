@@ -1,0 +1,15 @@
+<p>
+    demo/{{ demo }}-handler.php
+    &nbsp;&nbsp;&nbsp;
+    <a href="#" class="select-text" data-selector="#{{ demo }}-php-content">Select all</a>
+</p>
+
+<pre id="{{ demo }}-php-content" class="prettyprint">{{ asset_contents('demo/' ~ demo ~ '-handler.php') }}</pre>
+
+<script type="text/javascript">
+
+    $(function() {
+        prettyPrint();
+    });
+
+</script>

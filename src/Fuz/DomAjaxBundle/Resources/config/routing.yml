@@ -7,3 +7,13 @@ fuz_dom_ajax_documentation:
     pattern:  /documentation/{option}
     defaults: { _controller: FuzDomAjaxBundle:Default:documentation }
     methods:  [GET]
+
+fuz_dom_ajax_complete_html:
+    pattern:  /view/{demo}.{extension}
+    defaults: { _controller: FuzDomAjaxBundle:Default:completeHTML }
+    methods:  [GET]
+
+fuz_dom_ajax_php_handler:
+    pattern:  /handler/{demo}
+    defaults: { _controller: FuzDomAjaxBundle:Default:phpHandler }
+    methods:  [GET]

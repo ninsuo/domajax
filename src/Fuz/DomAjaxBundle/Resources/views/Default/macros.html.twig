@@ -35,8 +35,28 @@
         <li class="active">
             <a data-toggle="tab" href="#{{ id }}-demo">Live Demo</a>
         </li>
-        <li><a data-toggle="tab" href="#{{ id }}-html">Complete HTML</a></li>
-        <li><a data-toggle="tab" href="#{{ id }}-php">PHP Handler</a></li>
+        <li>
+            <a
+                data-toggle="tab"
+                href="#{{ id }}-html"
+                class="domajax click"
+                data-endpoint="{{ path('fuz_dom_ajax_complete_html', {'demo': id, 'extension': extension}) }}"
+                data-output="#{{ id }}-html"
+                data-method="get"
+                data-limit="1"
+                >Complete HTML</a>
+        </li>
+        <li>
+            <a
+                data-toggle="tab"
+                href="#{{ id }}-php"
+                class="domajax click"
+                data-endpoint="{{ path('fuz_dom_ajax_php_handler', {'demo': id}) }}"
+                data-output="#{{ id }}-php"
+                data-method="get"
+                data-limit="1"
+                >PHP Handler</a>
+        </li>
         <li><a href="{{ asset('demo/' ~ id ~ '-view.' ~ extension) }}" target="_new">Open in new tab</a></li>
     </ul>
     <div class="tab-content">
@@ -62,20 +82,14 @@
             {% endif %}
         </div>
         <div id="{{ id }}-html" class="tab-pane fade">
-            <p>
-                demo/{{ id }}-view.{{ extension }}
-                &nbsp;&nbsp;&nbsp;
-                <a href="#" class="select-text" data-selector="#{{ id }}-html-content">Select all</a>
-            </p>
-            <pre id="{{ id }}-html-content" class="prettyprint">{{ asset_contents('demo/' ~ id ~ '-view.' ~ extension) }}</pre>
+            <div class="center">
+                <img src="{{ asset('img/wait.gif') }}" />
+            </div>
         </div>
         <div id="{{ id }}-php" class="tab-pane fade">
-            <p>
-                demo/{{ id }}-handler.php
-                &nbsp;&nbsp;&nbsp;
-                <a href="#" class="select-text" data-selector="#{{ id }}-php-content">Select all</a>
-            </p>
-            <pre id="{{ id }}-php-content" class="prettyprint">{{ asset_contents('demo/' ~ id ~ '-handler.php') }}</pre>
+            <div class="center">
+                <img src="{{ asset('img/wait.gif') }}" />
+            </div>
         </div>
     </div>
 </div>
@@ -84,10 +98,9 @@
     $(function() {
         prettyPrint();
         $('.demo-iframe').load(function() {
-            setTimeout(function() {
-                resizeFrames();
-                hideGoHome();
-            }, 200);
+            var that = $(this);
+            resizeFrame(that);
+            hideGoHome(that);
         });
     });
 </script>
