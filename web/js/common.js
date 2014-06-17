@@ -63,11 +63,15 @@ $('body').delegate('.no-click', 'click', function(e) {
 
 /* other */
 
-function hideGoHome() {
+function hideGoHome(iframe) {
+    var back = iframe.contents().find('.go-back-home');
+    back.css('display', 'none');
+}
+
+function hideGoHomes() {
     $('.demo-iframe').each(function() {
         var iframe = $(this);
-        var back = iframe.contents().find('.go-back-home');
-        back.css('display', 'none');
+        hideGoHome(iframe);
     });
 }
 
