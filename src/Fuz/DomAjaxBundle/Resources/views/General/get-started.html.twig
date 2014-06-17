@@ -20,14 +20,16 @@
             <div>
                 <p>After downloading all scripts listed above, put and uncompress them in your poject, for example in a <b>js</b> directory.</p>
 
-                <pre>
+{% set code %}
 KolyMac:domajax-starter ninsuo$ ls -l js
 total 272
 -rw-r--r--@ 1 ninsuo  staff  95786 Jun 16 17:49 jquery-1.11.1.min.js
 drwxr-xr-x@ 6 ninsuo  staff    204 Jun 16 17:50 jquery-ui-1.10.4
 -rw-r--r--  1 ninsuo  staff  31167 Jun 16 17:49 jquery.domajax.js
 -rw-r--r--@ 1 ninsuo  staff   8143 Jun 16 17:45 json3.min.js
-                </pre>
+{% endset %}
+
+                <pre>{{ code }}</pre>
                 <br/>
 
                 <p>Then, create a <b>demo.php</b> file, and load all javascripts and css.</p>
