@@ -5,6 +5,16 @@
 {{ option }} - Documentation - domajax - Use Ajax powerfulness without JavaScript
 {% endblock %}
 
+{% block description %}
+{% spaceless %}
+{% if details['title']|default('') != '' %}
+{{ details['title'] }} - {{ details['description'] }} - {{ block('default_description') }}
+{% else %}
+{{ details['description'] }} - {{ block('default_description') }}
+{% endif %}
+{% endspaceless %}
+{% endblock %}
+
 {% block contents %}
 
 {% include 'FuzDomAjaxBundle:Code:' ~ option ~ '.html.twig' %}
