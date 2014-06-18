@@ -8,9 +8,9 @@
 {% block description %}
 {% spaceless %}
 {% if details['title']|default('') != '' %}
-{{ option }} - {{ details['title'] }} - {{ details['description'] }} - {{ block('default_description') }}
+{{ option }} - {{ details['title'] }} - {{ details['description'] }}
 {% else %}
-{{ option }} - {{ details['description'] }} - {{ block('default_description') }}
+{{ option }} - {{ details['description'] }}
 {% endif %}
 {% endspaceless %}
 {% endblock %}
