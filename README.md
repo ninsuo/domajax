@@ -140,7 +140,7 @@ b) a boolean, that tells if the "This code looks like this: " pane should be dis
 
 The displayed code below "This code looks like this" is taken from the view, between `<!-- demo starts here -->` and `<!-- demo ends here -->` strings.
 
-c) the demo view's file extension (if unset, by default html).
+c) the demo view's file extension (if unset, 'html').
 
 Sometimes, you need create a view in php (to include the handler who generates a table for example), use this last parameter to do it.
 
