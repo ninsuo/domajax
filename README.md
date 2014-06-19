@@ -132,7 +132,7 @@ a) the demo name (here, `script-alert`): this name is used for file names stored
 
 There are two files required for a new demonstration:
 
-- the view, `script-alert.html`, [like this](https://github.com/Ninsuo/domajax/blob/master/web/demo/script-alert-view.html), that contains the html code with the domajaxed form.
+- the view, `script-alert-view.html`, [like this](https://github.com/Ninsuo/domajax/blob/master/web/demo/script-alert-view.html), that contains the html code with the domajaxed form.
 
 - the handler, `script-alert-handler.php`, [like this](https://github.com/Ninsuo/domajax/blob/master/web/demo/script-alert-handler.php), to process the form.
 
