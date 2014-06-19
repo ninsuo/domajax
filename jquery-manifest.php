@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * To update on jquery:
+ * - commit/push all updates
+ * - increment version (ex: 2.0.5)
+ * - git tag 2.0.5
+ * - git push origin --tags
+ */
+
 $array = array(
         'name' => 'domajax',
         'version' => '2.0.4',
