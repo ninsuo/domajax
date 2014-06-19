@@ -7,7 +7,7 @@ Welcome to Domajax.com repository.
 
 If you are looking for the domajax plugin, you can directly click [here](https://github.com/Ninsuo/domajax/tree/master/web/js/domajax).
 
-If you want to read the documentation for that plugin, go to [http://www.domajax.com](http://www.domajax.com) directly.
+If you want to read the documentation for that plugin, go to [http://www.domajax.com](http://www.domajax.com).
 
 If you want to contribute to domajax, you're in the right place.
 
@@ -132,7 +132,7 @@ a) the demo name (here, `script-alert`): this name is used for file names stored
 
 There are two files required for a new demonstration:
 
-- the view, `script-alert.html`, [like this](https://github.com/Ninsuo/domajax/blob/master/web/demo/script-alert-view.html), that contains the html code with the domajaxed form.
+- the view, `script-alert-view.html`, [like this](https://github.com/Ninsuo/domajax/blob/master/web/demo/script-alert-view.html), that contains the html code with the domajaxed form.
 
 - the handler, `script-alert-handler.php`, [like this](https://github.com/Ninsuo/domajax/blob/master/web/demo/script-alert-handler.php), to process the form.
 
@@ -140,7 +140,7 @@ b) a boolean, that tells if the "This code looks like this: " pane should be dis
 
 The displayed code below "This code looks like this" is taken from the view, between `<!-- demo starts here -->` and `<!-- demo ends here -->` strings.
 
-c) the demo view's file extension (if unset, by default html).
+c) the demo view's file extension (if unset, 'html').
 
 Sometimes, you need create a view in php (to include the handler who generates a table for example), use this last parameter to do it.
 
