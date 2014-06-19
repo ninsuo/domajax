@@ -2,7 +2,7 @@
 
 $array = array(
         'name' => 'domajax',
-        'version' => '2.0.3',
+        'version' => '2.0.4',
         'title' => 'domajax.com - use Ajax without JavaScript',
         'author' => array(
                 'name' => 'Alain Tiemblo',
@@ -20,12 +20,12 @@ $array = array(
                 'jquery-ui' => '~1.8.17',
         ),
         'description' => "Domajax is a free jQuery plugin that give you tools to add ajax calls within your application, without a piece of javascript. It uses HTML5's data- attribute, and jQuery's .on() method to handle your ajax interactions. ",
-        'keywords' => explode(', ', 'domajax, ajax, jquery, plugin, javascript, dom, html, symfony2'),
+        'keywords' => explode(', ', 'ajax, jquery, plugin, dom, html, events'),
         'homepage' => 'http://www.domajax.com',
         'docs' => 'http://www.domajax.com',
-        'demo' => 'http://www.domajax.com',
+        'demo' => 'http://www.domajax.com/#introduction',
         'download' => 'https://github.com/Ninsuo/domajax/tree/2.0/web/js/domajax',
-        'bugs' => 'https://groups.google.com/d/forum/domajax',
+        'bugs' => 'https://github.com/Ninsuo/domajax/issues',
 );
 
 
