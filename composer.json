@@ -1,5 +1,5 @@
 {
-    "name": "domajax",
+    "name": "ninsuo/domajax",
     "license": "MIT",
     "type": "project",
     "description": "domajax - do ajax without javascript",
