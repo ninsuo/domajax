@@ -20,11 +20,11 @@ class RemoteFileExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-                'remote_file' => new \Twig_Function_Method($this, 'remote_file'),
+                'remote_file' => new \Twig_Function_Method($this, 'remoteFile'),
         );
     }
 
-    public function remote_file($url)
+    public function remoteFile($url)
     {
         $contents = file_get_contents($url);
         $file = $this->kernel->getRootDir() . "/Resources/views/temp/" . sha1($contents) . '.html.twig';
