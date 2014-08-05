@@ -22,9 +22,9 @@ class FileExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-                'template_contents' => new \Twig_Function_Method($this, 'template_contents'),
-                'asset_contents' => new \Twig_Function_Method($this, 'asset_contents'),
-                'asset_demo' => new \Twig_Function_Method($this, 'asset_demo'),
+                'template_contents' => new \Twig_Function_Method($this, 'templateContents'),
+                'asset_contents' => new \Twig_Function_Method($this, 'assetContents'),
+                'asset_demo' => new \Twig_Function_Method($this, 'assetDemo'),
         );
     }
 
@@ -34,7 +34,7 @@ class FileExtension extends \Twig_Extension
      * Exemple d'utilisation:
      * {{ template_contents('@FuzDomAjaxBundle/Resources/views/Default/index.html.twig') }}
      */
-    public function template_contents($path)
+    public function templateContents($path)
     {
         $path = $this->kernel->locateResource($path, null, true);
         return file_get_contents($path);
@@ -46,7 +46,7 @@ class FileExtension extends \Twig_Extension
      * Exemple d'utilisation:
      * {{ asset_contents('demo/introduction-handler.php') }}
      */
-    public function asset_contents($path)
+    public function assetContents($path)
     {
         $file = $this->kernel->getRootDir() . '/../web/' . $path;
         if ((!is_file($file)) || (!is_readable($file)))
@@ -59,9 +59,9 @@ class FileExtension extends \Twig_Extension
     /**
      * Ne récupere que le contenu HTML spécifique à une démo.
      */
-    public function asset_demo($path)
+    public function assetDemo($path)
     {
-        $content = $this->asset_contents($path);
+        $content = $this->assetContents($path);
         $start = '<!-- demo starts here -->';
         $end = '<!-- demo ends here -->';
         $content = substr($content, strpos($content, $start) + strlen($start));
