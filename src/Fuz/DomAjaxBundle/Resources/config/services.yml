@@ -19,7 +19,7 @@ services:
 
     fuz_tools.twig.text2img_extension:
         class: '%fuz_tools.twig.text2img_extension.class%'
-        arguments: []
+        arguments: ['@kernel']
         tags:
           - { name: twig.extension }
 

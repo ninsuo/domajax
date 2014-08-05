@@ -2,11 +2,20 @@
 
 namespace Fuz\DomAjaxBundle\Twig\Extension;
 
+use Symfony\Component\HttpKernel\KernelInterface;
+
 /**
  * Extension permettant de lire et renvoyer le contenu d'un fichier.
  */
 class Text2ImgExtension extends \Twig_Extension
 {
+
+    protected $kernel;
+
+    public function __construct(KernelInterface $kernel)
+    {
+        $this->kernel = $kernel;
+    }
 
     public function getFunctions()
     {
@@ -24,7 +33,7 @@ class Text2ImgExtension extends \Twig_Extension
         }
 
         // looking for target image size
-        $font = realpath(__DIR__ . '/../../Resources/font.ttf');
+        $font = $this->kernel->getRootDir() . '/../src/Fuz/DomAjaxBundle/Resources/font.ttf';
         $rect = imagettfbbox($size, 0, $font, $text);
         $minX = min(array($rect[0], $rect[2], $rect[4], $rect[6]));
         $maxX = max(array($rect[0], $rect[2], $rect[4], $rect[6]));
