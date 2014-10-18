@@ -2,8 +2,7 @@
 
 session_start();
 
-if (!array_key_exists('counter', $_SESSION))
-{
+if (!array_key_exists('counter', $_SESSION)) {
     $_SESSION['counter'] = 0;
 }
 
