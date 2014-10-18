@@ -27,8 +27,7 @@ class Text2ImgExtension extends \Twig_Extension
     public function text2img($text, $color = '#000000', $size = 12)
     {
         // devil error handler
-        if (strlen($color) != 7)
-        {
+        if (strlen($color) != 7) {
             $color = "#000000";
         }
 
@@ -44,8 +43,7 @@ class Text2ImgExtension extends \Twig_Extension
 
         // selecting an unused color for transparency
         $trans = 254;
-        if (hexdec(substr($color, 1, 2)) == 254)
-        {
+        if (hexdec(substr($color, 1, 2)) == 254) {
             $trans = 255;
         }
 
@@ -66,6 +64,7 @@ class Text2ImgExtension extends \Twig_Extension
         ob_start();
         imagepng($gdh);
         $b64stream = base64_encode(ob_get_clean());
+
         return '<img src="data:image/png;base64,'.$b64stream.'" />';
     }
 

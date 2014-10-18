@@ -17,5 +17,3 @@ if ($type === 'content') {
         echo "ok!";
     }
 }
-
-

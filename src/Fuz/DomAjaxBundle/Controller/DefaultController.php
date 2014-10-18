@@ -21,6 +21,7 @@ class DefaultController extends Controller
               'options' => $this->container->getParameter('domajax-options'),
               'events' => $this->container->getParameter('domajax-events'),
       );
+
       return $this->render('FuzDomAjaxBundle:Default:menu.html.twig', $context);
    }
 
@@ -30,6 +31,7 @@ class DefaultController extends Controller
               'options' => $this->container->getParameter('domajax-options'),
               'events' => $this->container->getParameter('domajax-events'),
       );
+
       return $this->render('FuzDomAjaxBundle:Default:contents.html.twig', $context);
    }
 
@@ -38,8 +40,7 @@ class DefaultController extends Controller
       $options = $this->container->getParameter('domajax-options');
       $events = $this->container->getParameter('domajax-events');
 
-      if ((!array_key_exists($option, $options)) && (!array_key_exists($option, $events)))
-      {
+      if ((!array_key_exists($option, $options)) && (!array_key_exists($option, $events))) {
          throw new AccessDeniedHttpException();
       }
 
@@ -55,19 +56,16 @@ class DefaultController extends Controller
 
    public function completeHTMLAction($demo, $extension)
    {
-      if (preg_match('/^[a-zA-Z0-9_]+$/', $demo) === false)
-      {
+      if (preg_match('/^[a-zA-Z0-9_]+$/', $demo) === false) {
          return new Response();
       }
 
-      if (preg_match('/^(php|html)$/', $extension) === false)
-      {
+      if (preg_match('/^(php|html)$/', $extension) === false) {
          return new Response();
       }
 
       $file = $this->get('kernel')->getRootDir() . '/../web/demo/' . $demo . '-view.' . $extension;
-      if (!is_file($file))
-      {
+      if (!is_file($file)) {
          throw new FileNotFoundException($demo . ' (complete html)');
       }
 
@@ -81,14 +79,12 @@ class DefaultController extends Controller
 
    public function phpHandlerAction($demo)
    {
-      if (preg_match('/^[a-zA-Z0-9_]+$/', $demo) === false)
-      {
+      if (preg_match('/^[a-zA-Z0-9_]+$/', $demo) === false) {
          return new Response();
       }
 
       $file = $this->get('kernel')->getRootDir() . '/../web/demo/' . $demo . '-handler.php';
-      if (!is_file($file))
-      {
+      if (!is_file($file)) {
          throw new FileNotFoundException($demo . ' (php handler)');
       }
 

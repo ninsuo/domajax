@@ -37,6 +37,7 @@ class FileExtension extends \Twig_Extension
     public function templateContents($path)
     {
         $path = $this->kernel->locateResource($path, null, true);
+
         return file_get_contents($path);
     }
 
@@ -49,10 +50,10 @@ class FileExtension extends \Twig_Extension
     public function assetContents($path)
     {
         $file = $this->kernel->getRootDir() . '/../web/' . $path;
-        if ((!is_file($file)) || (!is_readable($file)))
-        {
+        if ((!is_file($file)) || (!is_readable($file))) {
             throw new FileNotFoundException($file);
         }
+
         return file_get_contents($path);
     }
 
@@ -67,6 +68,7 @@ class FileExtension extends \Twig_Extension
         $content = substr($content, strpos($content, $start) + strlen($start));
         $content = substr($content, 0, strpos($content, $end));
         $content = trim($content, " ");
+
         return $content;
     }
 

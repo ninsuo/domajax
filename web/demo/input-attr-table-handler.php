@@ -28,7 +28,7 @@ if (array_key_exists('delete', $_REQUEST)) {
 }
 
 // Limit the stored database to 10 elements for this demo
-$_SESSION['db'] = array_slice($db, (count($db) - 10) > 0 ? : 0, 10);
+$_SESSION['db'] = array_slice($db, (count($db) - 10) > 0 ?: 0, 10);
 
 ?>
 

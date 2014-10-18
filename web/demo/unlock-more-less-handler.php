@@ -12,7 +12,7 @@ if (array_key_exists('number', $_REQUEST)) {
     if ($number > $_SESSION['more-less']) {
         // that's less => a 500 error
         header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
-    } else if ($number < $_SESSION['more-less']) {
+    } elseif ($number < $_SESSION['more-less']) {
         // an empty response => that's more
         echo '';
     } else {

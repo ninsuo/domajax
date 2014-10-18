@@ -13,4 +13,3 @@ if ($test === 'nohighlight') {
 if ($test === 'nonempty') {
     echo "But unfortunately, response is not empty :-)";
 }
-

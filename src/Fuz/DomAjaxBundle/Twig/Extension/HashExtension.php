@@ -34,22 +34,22 @@ class HashExtension extends \Twig_Extension
         $hash = '';
         $args = func_get_args();
         $size = array_shift($args);
-        foreach ($args as $arg)
-        {
+        foreach ($args as $arg) {
             $toHash = var_export($arg, true) . rand() . microtime();
             $hash .= str_shuffle(base_convert(str_shuffle(sha1(str_shuffle(md5($toHash)))), 16, 36));
         }
+
         return $this->randomHash($size, $hash);
     }
 
     public function randomHash($size = 10, $string = null)
     {
         $hash = '';
-        while (strlen($hash) < $size)
-        {
+        while (strlen($hash) < $size) {
             $toHash = $string . rand() . microtime();
             $hash .= str_shuffle(base_convert(str_shuffle(sha1(str_shuffle(md5($toHash)))), 16, 36));
         }
+
         return substr($hash, 0, $size);
     }
 
