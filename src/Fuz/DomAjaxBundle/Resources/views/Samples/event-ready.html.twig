@@ -1,0 +1,16 @@
+{# src/DomAjaxBundle/Resources/views/Samples/event-ready.html.twig #}
+
+{% import 'FuzDomAjaxBundle:Default:macros.html.twig' as macros %}
+
+{{
+    macros.demos_tabs('event-ready', [
+        {
+            'title': 'Loading huge contents',
+            'content': macros.demo_tabs('event-ready-load', true),
+        },
+        {
+            'title': 'Automatic polling',
+            'content': macros.demo_tabs('event-ready-poll', true),
+        },
+    ])
+}}

@@ -87,6 +87,9 @@ parameters:
       event-keyup:
         title: Ajax when typing text (autocomplete, helpers...)
         description: Processes the ajax call while typing
+      event-ready:
+        title: Ajax when page is ready
+        description: Processes the ajax call when the page has entirely loaded
       manual-usage:
         title: Manual JavaScript usage
         description: Use JavaScript code instead of classes to run your domajax calls
