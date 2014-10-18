@@ -1,5 +1,5 @@
 parameters:
-    
+
     domajax-options:
       data-endpoint:
         description: Sets ajax endpoint, the remote file that will be requested.
@@ -45,7 +45,7 @@ parameters:
         see-also: [data-counter]
       data-callback:
         description: Calls a javascript function when a specified event occurs.
-        see-also: [data-script]
+        see-also: [data-script, data-poll]
       data-script:
         description: Executes given javascript code when an event occurs.
         see-also: [data-callback]
@@ -60,7 +60,7 @@ parameters:
         see-also: [data-domajax]
       data-domajax:
         description: Process another ajax call when an event occurs.
-        see-also: [data-alias]
+        see-also: [data-alias, data-poll]
       data-raw:
         description: Set the ajax request body manually.
         see-also: [data-method]
@@ -70,6 +70,9 @@ parameters:
       data-cache:
         description: Prevents browsers from getting cached response instead of calling your endpoint.
         see-also:
+      data-poll:
+        description: When the ajax call is complete, repeats it until a callback returns true
+        see-also: [data-delay, data-domajax, data-callback]
 
     domajax-events:
       event-form:

@@ -1,5 +1,5 @@
 /*
- * jquery.domajax.js v2.0
+ * jquery.domajax.js v2.0.1
  * http://www.domajax.com
  *
  * Copyright (c) 2012-2014 alain tiemblo <ninsuo at gmail dot com>
@@ -98,6 +98,7 @@
             'domajax-failure': null,
             'domajax-empty': null,
             'domajax-not-empty': null,
+            'poll': null,
         };
 
         if (overwriteSettings === undefined) {
@@ -390,6 +391,7 @@
              */
 
             var responseIsEmpty = true;
+            var responseCopy = null;
 
             $.ajax({
                 url: settings['endpoint'],
@@ -398,6 +400,8 @@
                 dataType: settings['raw-type'] || undefined,
                 processData: settings['raw'] ? false : true,
                 success: function (response, textStatus, jqXHR) {
+
+                    responseCopy = response;
 
                     if (response) {
                         responseIsEmpty = false;
@@ -458,6 +462,19 @@
                     }
 
                     processEvents(settings, elem, 'complete');
+
+                    // --- data-poll
+                    if (settings['poll'] !== null) {
+                        var pollReturn = true;
+                        var pollCallback = settings['poll'];
+                        var pollClosure = tools.getClosureFronString(pollCallback, windowObj);
+                        if ($.isFunction(pollClosure)) {
+                            pollReturn = pollClosure(elem, responseCopy);
+                        }
+                        if (pollReturn) {
+                            elem.domAjax();
+                        }
+                    }
 
                 }
             });
@@ -798,6 +815,8 @@ $(document).ready(function () {
             e.preventDefault();
         }
     });
+
+    $('.domajax.ready').domAjax();
 
     return true;
 });

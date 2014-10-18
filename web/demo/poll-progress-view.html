@@ -7,7 +7,7 @@
     <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
     <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
 
-    <title>data-counter - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+    <title>data-poll - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
 
     <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="../css/demo.css" rel="stylesheet" media="screen">
@@ -15,22 +15,38 @@
 <body>
 
 <p>
-    This demo shows you that if you click several times on the button below, the ajax call will
-    be only made if you don't click anymore during 2 seconds.
+    Goal is to request server for progression information about a "long-running remote task". This means, we need to request the server as long as the task
+    has not finished, to display the progression of that task on the web side.
 </p>
 
 <!-- demo starts here -->
 
 <input
         type="button"
-        value="Click me"
+        value="Run"
         class="btn domajax click"
-        data-endpoint="delay-counter-handler.php"
-        data-output="#output"
-        data-delay='2000'
+        data-endpoint="poll-progress-handler.php"
+        data-poll="myPollingCallback"
+        data-delay="1000"
+        data-output="#percent"
         />
 
-<div id="output"></div>
+<div>
+    Progression :
+    <span id="percent">--</span>
+    %
+</div>
+
+<script type="text/javascript">
+
+    function myPollingCallback(elem, response) {
+        if (response === '--') {
+            return false;
+        }
+        return true;
+    }
+
+</script>
 
 <!-- demo ends here -->
 

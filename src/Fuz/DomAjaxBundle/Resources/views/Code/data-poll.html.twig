@@ -1,0 +1,44 @@
+{# src/DomAjaxBundle/Resources/views/Code/data-poll.html.twig #}
+
+<div class="row-fluid">
+    <h2>data-poll</h2>
+    <div>
+        <div class="span12">
+            <p class="lead">When an ajax request is complete, <em>data-poll</em> repeats it until a callback returns true.</p>
+            <br/>
+            <p>
+                If you need to follow long-running tasks in the server's background, you might need to display progression
+                information. This option let you set a callback (in the <em>data-poll</em> attribute), which is called
+                on complete (whatever the ajax call succeeded or failed). Your callback receives the domajax-ed element as first
+                parameter, and the ajax response as second parameter. It should return <b>false</b> if the polling should stop,
+                or <b>true</b> if the ajax request should be run again. Coupled with <em>data-delay</em>, you can set an
+                interval (in millisecs) between ajax calls.
+            </p>
+            <div class="alert alert-info">
+                If <em>data-poll</em> is set but empty, polling will never stop.
+            </div>
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4>
+                            <u>Usage</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-poll="(a javascript callback that returns true to continue poling)"</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h4>
+                            <u>Example</u>
+                        </h4>
+                        <br/>
+                        <ul>
+                            <li>data-poll="myPollingCallback"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

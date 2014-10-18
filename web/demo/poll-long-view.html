@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="robots" content="index, follow, all"/>
+        <meta name="author" content="Alain Tiemblo"/>
+        <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+        <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+        <title>data-poll - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+        <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../css/demo.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+
+        <p>
+            We are simulating a chatroom : click <a href="http://domajax.com/demo/poll-long-view.html" target="_blank">here</a> to open this demonstration
+            in a new tab, and enter messages. After a short while, those messages will appear on the first tab.
+        </p>
+
+        <!-- demo starts here -->
+
+        <p>
+
+        </p>
+
+        <label for="message">Enter a message</label>
+        <input type="text" id="message" name="message" />
+        <br/>
+        <input
+            type="button"
+            value="Send"
+            class="btn domajax click"
+            data-endpoint="poll-long-handler.php"
+            data-input="#message"
+            data-output="#output"
+            />
+
+        <div
+            class="domajax ready"
+            data-endpoint="poll-long-handler.php"
+            data-poll=""
+            data-output="#output"
+        ></div>
+
+        <div id="output"></div>
+
+        <!-- demo ends here -->
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap/bootstrap.js"></script>
+        <script src="../js/domajax/jquery.domajax.js"></script>
+    </body>
+</html>

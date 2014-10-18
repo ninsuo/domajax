@@ -13,11 +13,16 @@ $html = <<< EOT
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="robots" content="index, follow, all"/>
+        <meta name="author" content="Alain Tiemblo"/>
+        <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+        <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+        <title>{$opt} - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
         <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-        <style type="text/css">
-            #output { margin-top: 10px; min-height: 20px; padding: 5px 5px 5px 5px; background-color: #EEEEEE; border: 1px solid black; }
-        </style>
+        <link href="../css/demo.css" rel="stylesheet" media="screen">
     </head>
     <body>
 
