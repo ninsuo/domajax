@@ -3,9 +3,9 @@
 namespace Fuz\DomAjaxBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller
 {
@@ -41,7 +41,7 @@ class DefaultController extends Controller
       $events = $this->container->getParameter('domajax-events');
 
       if ((!array_key_exists($option, $options)) && (!array_key_exists($option, $events))) {
-         throw new AccessDeniedHttpException();
+         throw new AccessDeniedException();
       }
 
       $doc = array_merge($options, $events);
