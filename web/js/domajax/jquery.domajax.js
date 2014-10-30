@@ -1,5 +1,5 @@
 /*
- * jquery.domajax.js v2.0.1
+ * jquery.domajax.js v2.0.2
  * http://www.domajax.com
  *
  * Copyright (c) 2012-2014 alain tiemblo <ninsuo at gmail dot com>
@@ -708,7 +708,14 @@
                 var value = tools.getValue(elem, context);
                 inputs[key] = value;
             } else {
-                var inputsSelectors = [selector + ' :input', selector];
+                var selectorContainer = '';
+                $.each(selector.split(','), function(i, e) {
+                    if (i > 0) {
+                        selectorContainer += ',';
+                    }
+                    selectorContainer += e + ' :input';
+                });
+                var inputsSelectors = [selectorContainer, selector];
                 $.each(inputsSelectors, function (index, inputsSelector) {
                     var jqInputsSelector = $(inputsSelector);
                     if (jqInputsSelector.length > 0) {
