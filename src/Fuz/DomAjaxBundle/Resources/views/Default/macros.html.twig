@@ -63,7 +63,7 @@
         <div id="{{ id }}-demo" class="tab-pane fade active in">
             {% if show_code %}
                 <div class="fullwidth">
-                    <iframe id="frame-{{ id }}" class="demo-iframe fullwidth" src="{{ asset('demo/' ~ id ~ '-view.' ~ extension) }}"></iframe>
+                    <iframe id="frame-{{ id }}" class="demo-iframe fullwidth" src="{{ asset('demo/' ~ id ~ '-view.' ~ extension) }}?q={{ random() }}"></iframe>
                     <div class="center">
                         <a href="#" class="demo-switcher small no-click">If the result is not displayed correctly, click here to resize iframe above.</a>
                     </div>
