@@ -774,53 +774,63 @@ $(document).ready(function () {
     }
 
     // click
-    body.on('click', '.domajax.click', function (e) {
-        var that = $(this);
-        that.domAjax();
-        e.preventDefault();
+    body
+        .off('click', '.domajax.click')
+        .on('click', '.domajax.click', function (e) {
+            var that = $(this);
+            that.domAjax();
+            e.preventDefault();
     });
 
     // keyup (with type watching)
     var typeWatch = null;
-    body.on('keyup', '.domajax.keyup', function (e) {
-        var that = $(this);
-        body.domAjax.tools.setOptionDefault(that, 'value', '');
-        body.domAjax.tools.setOptionDefault(that, 'delay', 800);
-        that.domAjax();
+    body
+        .off('keyup', '.domajax.keyup')
+        .on('keyup', '.domajax.keyup', function (e) {
+            var that = $(this);
+            body.domAjax.tools.setOptionDefault(that, 'value', '');
+            body.domAjax.tools.setOptionDefault(that, 'delay', 800);
+            that.domAjax();
     });
 
     // change (with enter-key launcher)
-    body.on('change', '.domajax.change', function (e) {
-        var that = $(this);
-        body.domAjax.tools.setOptionDefault(that, 'value', '');
-        that.domAjax();
-        e.preventDefault();
-    });
-    body.on('keypress', '.domajax.change', function (e) {
-        var that = $(this);
-        body.domAjax.tools.setOptionDefault(that, 'value', '');
-        if ((e.which === 13) && !(that.is('textarea'))) {
+    body
+        .off('change', '.domajax.change')
+        .on('change', '.domajax.change', function (e) {
+            var that = $(this);
+            body.domAjax.tools.setOptionDefault(that, 'value', '');
             that.domAjax();
             e.preventDefault();
-        }
+    });
+    body
+        .off('keypress', '.domajax.change')
+        .on('keypress', '.domajax.change', function (e) {
+            var that = $(this);
+            body.domAjax.tools.setOptionDefault(that, 'value', '');
+            if ((e.which === 13) && !(that.is('textarea'))) {
+                that.domAjax();
+                e.preventDefault();
+            }
     });
 
     // ajax form submit
-    body.on('click', 'input[type="submit"].domajax, button[type="submit"].domajax', function (e) {
-        var jqSubmit = $(this);
-        var jqForms = $(this).closest('form');
-        if (jqForms.length > 0) {
-            jqForms.each(function () {
-                var jqForm = $(this);
-                var formId = body.domAjax.tools.getOrCreateId(jqForm);
-                jqSubmit.data('endpoint', jqForm.attr('action') || jqForm.data('endpoint'));
-                jqSubmit.data('method', jqForm.attr('method') || 'GET');
-                jqSubmit.data('input', '#' + formId);
-                jqSubmit.data('alias', '#' + formId);
-                jqSubmit.domAjax();
-            });
-            e.preventDefault();
-        }
+    body
+        .off('click', 'input[type="submit"].domajax, button[type="submit"].domajax')
+        .on('click', 'input[type="submit"].domajax, button[type="submit"].domajax', function (e) {
+            var jqSubmit = $(this);
+            var jqForms = $(this).closest('form');
+            if (jqForms.length > 0) {
+                jqForms.each(function () {
+                    var jqForm = $(this);
+                    var formId = body.domAjax.tools.getOrCreateId(jqForm);
+                    jqSubmit.data('endpoint', jqForm.attr('action') || jqForm.data('endpoint'));
+                    jqSubmit.data('method', jqForm.attr('method') || 'GET');
+                    jqSubmit.data('input', '#' + formId);
+                    jqSubmit.data('alias', '#' + formId);
+                    jqSubmit.domAjax();
+                });
+                e.preventDefault();
+            }
     });
 
     $('.domajax.ready').domAjax();
