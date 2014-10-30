@@ -65,6 +65,8 @@ When you'll be done with your new feature, you'll need to write its documentatio
 
 In this sample, you're writting the `data-script` option, **you'll need to replace this name by yours**. You can check how this documentation page looks [here](http://www.domajax.com/documentation/data-script).
 
+#### Configuration
+
 - In `app/config/domajax.yml`, you need to add your new option or your new event:
 
 For an option:
@@ -97,6 +99,8 @@ The `description` will be used as subtitle below the title in the documentation 
 
 ---
 
+#### Documentation
+
 - In `src/Fuz/DomAjaxBundle/Resources/views/Code/data-script.html.twig`, you need to write the documentation.
 
 Don't hesitate to copy/paste an existing sample to avoid HTML matters.
@@ -104,6 +108,8 @@ Don't hesitate to copy/paste an existing sample to avoid HTML matters.
 You can [see the data-script example here](https://github.com/Ninsuo/domajax/blob/master/src/Fuz/DomAjaxBundle/Resources/views/Code/data-script.html.twig).
 
 ---
+
+#### Declare samples
 
 - In `src/Fuz/DomAjaxBundle/Resources/views/Samples/data-script.html.twig`, you need to configure live demonstrations.
 
@@ -148,6 +154,8 @@ You can [see the data-script example here](https://github.com/Ninsuo/domajax/blo
 
 
 ---
+
+#### Develop samples
 
 - You now need to create your samples.
 
