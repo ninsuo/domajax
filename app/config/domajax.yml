@@ -73,6 +73,9 @@ parameters:
       data-poll:
         description: When the ajax call is complete, repeats it until a callback returns true
         see-also: [data-delay, data-domajax, data-callback]
+      data-domajax-prefix:
+        description: Set a prefix to all domajax options (data-<prefix><option>)
+        see-also: []
 
     domajax-events:
       event-form:

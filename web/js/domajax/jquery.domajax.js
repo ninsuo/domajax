@@ -131,23 +131,33 @@
             var settings = {};
 
             var elem = $(this);
+            var prefix = '';
+
+            // --- data-domajax-prefix
+            if (elem.data('domajax-prefix') !== undefined) {
+                prefix = elem.data('domajax-prefix');
+            }
 
             // --- data-alias
             var aliases_seen = [];
-            while ((elem.data('alias') !== undefined) && (elem.data('alias') !== null)) {
-                var aliases = $(elem.data('alias'));
-                elem.data('alias', null);
+            while ((elem.data(prefix + 'alias') !== undefined) && (elem.data(prefix + 'alias') !== null)) {
+                var aliases = $(elem.data(prefix + 'alias'));
+                elem.data(prefix + 'alias', null);
                 if (aliases.length > 0) {
                     $(aliases).each(function () {
                         var alias = $(this);
+                        var alias_prefix = '';
+                        if (alias.data('domajax-prefix') !== undefined) {
+                            alias_prefix = alias.data('domajax-prefix');
+                        }
                         var alias_id = tools.getOrCreateId(alias);
                         if ($.inArray(alias_id, aliases_seen) >= 0) {
                             return true;
                         }
                         aliases_seen.push(alias_id);
                         $.each(defaults, function (key) {
-                            if (((elem.data(key) === undefined) || (elem.data(key) === null)) && (alias.data(key) !== undefined)) {
-                                elem.data(key, alias.data(key));
+                            if (((elem.data(prefix + key) === undefined) || (elem.data(prefix + key) === null)) && (alias.data(alias_prefix + key) !== undefined)) {
+                                elem.data(prefix + key, alias.data(alias_prefix + key));
                             }
                         });
                     });
@@ -157,8 +167,8 @@
             // --- settings
             settings = $.extend(true, {}, defaults);
             $.each(settings, function (key) {
-                if (elem.data(key) !== undefined) {
-                    settings[key] = elem.data(key);
+                if (elem.data(prefix + key) !== undefined) {
+                    settings[key] = elem.data(prefix + key);
                 }
             });
             settings = $.extend(true, settings, overwriteSettings);
