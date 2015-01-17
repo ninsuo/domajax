@@ -98,14 +98,14 @@
             'domajax-failure': null,
             'domajax-empty': null,
             'domajax-not-empty': null,
-            'poll': null,
+            'poll': null
         };
 
         if (overwriteSettings === undefined) {
             overwriteSettings = {};
         }
 
-        var events = ['before', 'complete', 'success', 'failure', 'empty', 'not-empty', ];
+        var events = ['before', 'complete', 'success', 'failure', 'empty', 'not-empty'];
 
         /*
          * ------------------------------------------
@@ -507,19 +507,21 @@
             }
         }
 
-        // --- data-callback-event
+       // --- data-callback-event
         var option = 'callback-' + event;
         if (settings[option] !== null) {
-            var callback = settings[option];
-            var closure = tools.getClosureFronString(callback, windowObj);
-            if ($.isFunction(closure)) {
-                var callbackReturn = closure(elem, response, textStatus, jqXHR);
-                if (callbackReturn === false) {
-                    return false;
+          var callbacks = settings[option].split(' ');
+          $.each(callbacks, function(index, callback) {
+                var closure = tools.getClosureFronString(callback, windowObj);
+                if ($.isFunction(closure)) {
+                    var callbackReturn = closure(elem, response, textStatus, jqXHR);
+                    if (callbackReturn === false) {
+                        return false;
+                    }
+                } else {
+                    throw 'data-callback must contain JavaScript function(s).';
                 }
-            } else {
-                throw 'data-callback must contain a JavaScript function.';
-            }
+            });
         }
 
     };
@@ -657,7 +659,7 @@
         randomNumber: function () {
             var rand = '' + Math.random() * 1000 * new Date().getTime();
             return rand.replace('.', '').split('').sort(function () {
-                return 0.5 - Math.random()
+                return 0.5 - Math.random();
             }).join('');
         },
 

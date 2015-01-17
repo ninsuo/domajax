@@ -4,7 +4,7 @@
     <h2>data-callback</h2>
     <div>
         <div class="span12">
-            <p class="lead">Calls a javascript function when a specified event occurs.</p>
+            <p class="lead">Calls one or several javascript functions when a specified event occurs.</p>
             <h4>Available events: data-callback-before, data-callback-complete, data-callback-success, data-callback-failure, data-callback-empty, data-callback-not-empty</h4>
             <p>
                 Even if domajax tries to handle most ajax use cases to avoid javascript usage, you may need to customize domajax behaviour,
@@ -13,6 +13,8 @@
                 <em>data-callback-before</em> is processed before other options and before the ajax call. Its callback should return false to abord
                 the ajax call. <br/> Other <em>data-callback-(event)</em> are also processed early after getting the ajax response. Callbacks should return
                 false to abord the standard domajax response processing.
+                <br/><br/>
+                You can call several functions, by separating them using a space. They will be called in your defined order.
                 <br/><br/>
                 Callbacks take 4 arguments : <b>elem</b> (the jQuery element that contains the ajax call), <b>response</b>, <b>textStatus</b>,
                 <b>jqXHR</b> (the 3 arguments given by jQuery.ajax to success/error callbacks, set to <em>undefined</em> on before/complete domajax callbacks).
@@ -30,8 +32,8 @@
                         </h4>
                         <br/>
                         <ul>
-                            <li>data-callback-(event)="some_function();"</li>
-                            <li>data-callback-(event)="object.some_namespaced_function()"</li>
+                            <li>data-callback-(event)="some_function some_other_function"</li>
+                            <li>data-callback-(event)="object.some_namespaced_function"</li>
                         </ul>
                     </div>
                     <div class="span6">

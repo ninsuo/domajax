@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="robots" content="index, follow, all"/>
+        <meta name="author" content="Alain Tiemblo"/>
+        <meta name="description" content="domajax is a free jQuery plugin that gives you tools to add ajax calls within your application, without a piece of javascript."/>
+        <meta name="keywords" content="domajax, ajax, jquery, plugin, javascript"/>
+
+        <title>callback-several - Documentation - domajax - Use Ajax powerfulness without JavaScript</title>
+
+        <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../css/demo.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+
+        <!-- demo starts here -->
+
+        <input
+            type="button"
+            value="Click me"
+            class="btn domajax click"
+            data-endpoint="callback-several-handler.php"
+            data-callback-success="tellTimeInEnglish tellTimeInFrench"
+         />
+
+        <script type="text/javascript">
+
+            function tellTimeInEnglish(elem, response) {
+                alert("It is now " + response);
+            }
+
+            function tellTimeInFrench(elem, response) {
+                alert("Il est maintenant " + response);
+            }
+
+        </script>
+
+        <!-- demo ends here -->
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap/bootstrap.js"></script>
+        <script src="../js/domajax/jquery.domajax.js"></script>
+    </body>
+</html>
