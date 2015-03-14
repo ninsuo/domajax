@@ -1,6 +1,6 @@
 {
     "name": "domajax",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "homepage": "http://domajax.com",
     "description": "Domajax is a free jQuery plugin that give you tools to add ajax calls within your application, without a piece of javascript.",
     "main": [
