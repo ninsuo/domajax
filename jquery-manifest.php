@@ -10,7 +10,7 @@
 
 $array = array(
         'name' => 'domajax',
-        'version' => '2.1.2',
+        'version' => '2.1.3',
         'title' => 'domajax.com - use Ajax without JavaScript',
         'author' => array(
                 'name' => 'Alain Tiemblo',
