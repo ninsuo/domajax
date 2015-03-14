@@ -1,0 +1,33 @@
+{
+    "name": "domajax",
+    "version": "2.1.0",
+    "homepage": "http://domajax.com",
+    "description": "Domajax is a free jQuery plugin that give you tools to add ajax calls within your application, without a piece of javascript.",
+    "main": [
+        "js/jquery.domajax.js"
+    ],
+    "keywords": [
+        "domajax",
+        "ajax",
+        "jquery",
+        "plugin",
+        "javascript",
+        "dom",
+        "html"
+    ],
+    "authors": [
+        "Alain Tiemblo"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ninsuo/domajax.git"
+    },
+    "bugs": "https://github.com/ninsuo/domajax/issues",
+    "license": "MIT",
+    "ignore": ["./!(js/jquery.domajax.js)"],
+    "dependencies": {
+        "jquery": ">=1.7",
+        "jquery.ui": "*",
+        "json2-js": "*"
+    }
+}
