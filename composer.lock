@@ -588,20 +588,20 @@
         },
         {
             "name": "oyejorge/less.php",
-            "version": "v1.7.0.4",
+            "version": "v1.7.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oyejorge/less.php.git",
-                "reference": "fc971e6d3eb54dff3d3eba4734ff207d37cb4e0e"
+                "reference": "4385036b1dbfaf37f5380bd26a1e6006fc43149f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/fc971e6d3eb54dff3d3eba4734ff207d37cb4e0e",
-                "reference": "fc971e6d3eb54dff3d3eba4734ff207d37cb4e0e",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/4385036b1dbfaf37f5380bd26a1e6006fc43149f",
+                "reference": "4385036b1dbfaf37f5380bd26a1e6006fc43149f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2"
+                "php": ">=5.3"
             },
             "bin": [
                 "bin/lessc"
@@ -643,7 +643,7 @@
                 "php",
                 "stylesheet"
             ],
-            "time": "2015-05-27 17:50:32"
+            "time": "2015-07-13 20:34:18"
         },
         {
             "name": "psr/log",
@@ -845,16 +845,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.1",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74"
+                "reference": "a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/932b6e7499c670f4db6d0b871477a4a3ca161e74",
-                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486",
+                "reference": "a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486",
                 "shasum": ""
             },
             "require": {
@@ -963,7 +963,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-06-11 21:15:28"
+            "time": "2015-07-31 13:24:45"
         },
         {
             "name": "twbs/bootstrap",
@@ -1067,25 +1067,29 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.18.2",
+            "version": "v1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602"
+                "reference": "913d282caca9ee0e8d05940c6caa486d58810dd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e8e6575abf6102af53ec283f7f14b89e304fa602",
-                "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/913d282caca9ee0e8d05940c6caa486d58810dd4",
+                "reference": "913d282caca9ee0e8d05940c6caa486d58810dd4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.7"
             },
+            "require-dev": {
+                "symfony/debug": "~2.7",
+                "symfony/phpunit-bridge": "~2.7"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.18-dev"
+                    "dev-master": "1.21-dev"
                 }
             },
             "autoload": {
@@ -1120,7 +1124,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-06-06 23:31:24"
+            "time": "2015-08-24 09:51:18"
         }
     ],
     "packages-dev": [],
