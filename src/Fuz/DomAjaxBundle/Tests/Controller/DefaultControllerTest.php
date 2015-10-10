@@ -12,6 +12,6 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '');
 
         $contents = $client->getResponse()->getContent();
-        $this->assertTrue(stripos('domajax.com', $contents) !== false);
+        $this->assertTrue(stripos('domajax.fuz.org', $contents) !== false);
     }
 }
