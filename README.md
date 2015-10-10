@@ -1,13 +1,13 @@
 Domajax.com
 ===========
 
-Welcome to Domajax.com repository.
+Welcome to Domajax repository.
 
 ---
 
 If you are looking for the domajax plugin, you can directly click [here](https://github.com/Ninsuo/domajax/tree/master/web/js/domajax).
 
-If you want to read the documentation for that plugin, go to [http://www.domajax.com](http://www.domajax.com).
+If you want to read the documentation for that plugin, go to [http://domajax.fuz.org](http://domajax.fuz.org).
 
 If you want to contribute to domajax, you're in the right place.
 
@@ -63,7 +63,7 @@ Code will speak better than me, so I let you check it out yourself in `web/js/do
 
 When you'll be done with your new feature, you'll need to write its documentation.
 
-In this sample, you're writting the `data-script` option, **you'll need to replace this name by yours**. You can check how this documentation page looks [here](http://www.domajax.com/documentation/data-script).
+In this sample, you're writting the `data-script` option, **you'll need to replace this name by yours**. You can check how this documentation page looks [here](http://domajax.fuz.org/documentation/data-script).
 
 #### Configuration
 
