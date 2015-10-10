@@ -41,3 +41,4 @@ assetic:
 
 braincrafted_bootstrap:
     less_filter: lessphp
+    jquery_path: %kernel.root_dir%/../components/jquery/jquery.min.js
