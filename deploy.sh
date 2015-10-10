@@ -11,7 +11,7 @@ sudo ls > /dev/null
 
 (cd $SOURCE && git reset --hard && git pull)
 
-(cd $SOUrCE && composer update)
+(cd $SOURCE && composer update)
 
 sudo rsync --partial --recursive --verbose --progress --delete --links ${SOURCE}/* $TARGET
 
