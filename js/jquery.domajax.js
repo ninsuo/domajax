@@ -492,7 +492,6 @@
             return true;
 
         }); // $(elems).each
-        return elems;
 
     }; // $.fn.domAjax
     /*
