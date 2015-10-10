@@ -1,6 +1,6 @@
 /*
  * jquery.domajax.js v2.0.3
- * http://www.domajax.com
+ * http://domajax.fuz.org
  *
  * Copyright (c) 2012-2014 alain tiemblo <ninsuo at gmail dot com>
  *

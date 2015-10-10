@@ -64,7 +64,7 @@ $obj = json_decode($json);
 <!-- demo ends here -->
 
 <div class="go-back-home">
-    <a href="http://www.domajax.com">Back to domajax's home</a>
+    <a href="http://domajax.fuz.org">Back to domajax's home</a>
 </div>
 
 <script src="../js/json2.js"></script>
