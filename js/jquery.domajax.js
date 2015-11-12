@@ -2,7 +2,7 @@
  * jquery.domajax.js v2.0.3
  * http://domajax.fuz.org
  *
- * Copyright (c) 2012-2014 alain tiemblo <ninsuo at gmail dot com>
+ * Copyright (c) 2012-2015 alain tiemblo <ninsuo at gmail dot com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish,
