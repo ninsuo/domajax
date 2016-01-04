@@ -837,6 +837,9 @@ $(document).ready(function () {
         .off('click', 'input[type="submit"].domajax, button[type="submit"].domajax')
         .on('click', 'input[type="submit"].domajax, button[type="submit"].domajax', function (e) {
             var jqSubmit = $(this);
+            if (jqSubmit.hasClass('click')) {
+                return ;
+            }
             var jqForms = $(this).closest('form');
             if (jqForms.length > 0) {
                 jqForms.each(function () {
