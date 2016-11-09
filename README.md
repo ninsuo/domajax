@@ -5,7 +5,7 @@ Welcome to Domajax repository.
 
 ---
 
-If you are looking for the domajax plugin, you can directly click [here](https://github.com/Ninsuo/domajax/tree/master/web/js/domajax).
+If you are looking for the domajax plugin, you can directly click [here](https://github.com/ninsuo/domajax/tree/master/js).
 
 If you want to read the documentation for that plugin, go to [http://domajax.fuz.org](http://domajax.fuz.org).
 
