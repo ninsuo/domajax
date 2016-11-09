@@ -1,11 +1,11 @@
-Domajax.com
+domajax.fuz.org
 ===========
 
 Welcome to Domajax repository.
 
 ---
 
-If you are looking for the domajax plugin, you can directly click [here](https://github.com/ninsuo/domajax/tree/master/js).
+If you are looking for the domajax plugin, you can directly click [here](https://raw.githubusercontent.com/ninsuo/domajax/master/js/jquery.domajax.js).
 
 If you want to read the documentation for that plugin, go to [http://domajax.fuz.org](http://domajax.fuz.org).
 
