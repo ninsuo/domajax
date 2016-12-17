@@ -211,7 +211,7 @@
             if (endpoint === null) {
                 endpoint = tools.getValue(settings['endpoint-container'], context);
                 if (endpoint === null) {
-                    throw "Element has no endpoint data.";
+                    endpoint = '';
                 }
             }
             settings['endpoint'] = endpoint;
